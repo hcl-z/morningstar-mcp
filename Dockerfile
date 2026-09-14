@@ -8,6 +8,7 @@ RUN npm ci
 COPY tsconfig.json tsconfig.build.json ./
 COPY src ./src
 RUN npm run build
+RUN npm prune --omit=dev
 
 FROM node:22-alpine AS production
 
@@ -17,10 +18,8 @@ ENV NODE_ENV=production \
     MCP_HOST=0.0.0.0 \
     MCP_PORT=3845
 
-COPY package.json package-lock.json ./
-RUN npm ci --omit=dev && npm cache clean --force
-
 COPY --from=build /app/dist ./dist
+  COPY --from=build /app/node_modules ./node_modules
 COPY docs/screener-fields.json ./docs/screener-fields.json
 
 USER node
