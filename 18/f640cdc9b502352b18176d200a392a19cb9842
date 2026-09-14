@@ -1,0 +1,14 @@
+.npmrc
+  h_57e80a12fc07c7 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.44-trip",
+  "base_commit_sha": "18f640cdc9b502352b18176d200a392a19cb9842",
+  "prompts": {},
+  "humans": {
+    "h_57e80a12fc07c7": {
+      "author": "hcl-z <1401859664@qq.com>"
+    }
+  }
+}
