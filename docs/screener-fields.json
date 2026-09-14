@@ -1,0 +1,7282 @@
+{
+  "source": "local",
+  "groups": [
+    {
+      "label": "基本信息",
+      "controls": [
+        {
+          "label": "基金组别",
+          "source": "local",
+          "component": "checkbox-ternary",
+          "items": [
+            {
+              "label": "开放式",
+              "dp": "ifOpen"
+            },
+            {
+              "label": "封闭式",
+              "dp": "ifClose"
+            },
+            {
+              "label": "QDII",
+              "dp": "qDII"
+            },
+            {
+              "label": "ETF",
+              "dp": "exchangeTradedShare"
+            },
+            {
+              "label": "个人养老金",
+              "dp": "personalPension"
+            },
+            {
+              "label": "北上基金",
+              "dp": "mRF"
+            },
+            {
+              "label": "联接基金",
+              "dp": "masterFeeder"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "ifOpen",
+              "label": "开放式",
+              "valueType": "boolean-string",
+              "values": [
+                "true",
+                "false"
+              ]
+            },
+            {
+              "field": "ifClose",
+              "label": "封闭式",
+              "valueType": "boolean-string",
+              "values": [
+                "true",
+                "false"
+              ]
+            },
+            {
+              "field": "qDII",
+              "label": "QDII",
+              "valueType": "boolean-string",
+              "values": [
+                "true",
+                "false"
+              ]
+            },
+            {
+              "field": "exchangeTradedShare",
+              "label": "ETF",
+              "valueType": "boolean-string",
+              "values": [
+                "true",
+                "false"
+              ]
+            },
+            {
+              "field": "personalPension",
+              "label": "个人养老金",
+              "valueType": "boolean-string",
+              "values": [
+                "true",
+                "false"
+              ]
+            },
+            {
+              "field": "mRF",
+              "label": "北上基金",
+              "valueType": "boolean-string",
+              "values": [
+                "true",
+                "false"
+              ]
+            },
+            {
+              "field": "masterFeeder",
+              "label": "联接基金",
+              "valueType": "boolean-string",
+              "values": [
+                "true",
+                "false"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "资产大类",
+          "dp": "broadCategoryId",
+          "columnId": "broadCategoryNameCN",
+          "source": "local",
+          "component": "checkbox",
+          "comments": "Morningstar的行业分类系统通常用于对不同类型的基金和金融资产进行分类，以便投资者更容易理解它们的性质和投资风险。",
+          "items": [
+            {
+              "label": "股票型",
+              "value": "$BCG$EQUTY"
+            },
+            {
+              "label": "混合型",
+              "value": "$BCG$ALLOC"
+            },
+            {
+              "label": "可转债",
+              "value": "$BCG$CONVT,$BCG$HYBSC"
+            },
+            {
+              "label": "债券型",
+              "value": "$BCG$FXINC"
+            },
+            {
+              "label": "货币型",
+              "value": "$BCG$MNMKT,$BCG$CAPPR"
+            },
+            {
+              "label": "另类",
+              "value": "$BCG$ALTER"
+            },
+            {
+              "label": "商品",
+              "value": "$BCG$COMMO,$BCG$REALA"
+            },
+            {
+              "label": "其它",
+              "value": "$BCG$MISCL"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "broadCategoryId",
+              "label": "资产大类",
+              "valueType": "string-array",
+              "unit": null,
+              "sliderType": null,
+              "values": [
+                {
+                  "label": "股票型",
+                  "value": "$BCG$EQUTY"
+                },
+                {
+                  "label": "混合型",
+                  "value": "$BCG$ALLOC"
+                },
+                {
+                  "label": "可转债",
+                  "value": "$BCG$CONVT,$BCG$HYBSC"
+                },
+                {
+                  "label": "债券型",
+                  "value": "$BCG$FXINC"
+                },
+                {
+                  "label": "货币型",
+                  "value": "$BCG$MNMKT,$BCG$CAPPR"
+                },
+                {
+                  "label": "另类",
+                  "value": "$BCG$ALTER"
+                },
+                {
+                  "label": "商品",
+                  "value": "$BCG$COMMO,$BCG$REALA"
+                },
+                {
+                  "label": "其它",
+                  "value": "$BCG$MISCL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "晨星分类",
+          "dp": "categoryId",
+          "columnId": "categoryName",
+          "source": "local",
+          "component": "select-groups",
+          "groups": [
+            {
+              "label": "股票型",
+              "options": [
+                {
+                  "value": "CHCA000051",
+                  "label": "大盘成长股票"
+                },
+                {
+                  "value": "PGSZ01TTTT",
+                  "label": "大盘平衡股票"
+                },
+                {
+                  "value": "CHCA000052",
+                  "label": "大盘价值股票"
+                },
+                {
+                  "value": "CHCA000053",
+                  "label": "中盘成长股票"
+                },
+                {
+                  "value": "CHCA000054",
+                  "label": "中盘平衡股票"
+                },
+                {
+                  "value": "CHCA000037",
+                  "label": "香港股票"
+                },
+                {
+                  "value": "CHCA000033",
+                  "label": "沪港深股票"
+                },
+                {
+                  "value": "CHCA000034",
+                  "label": "行业股票-医药"
+                },
+                {
+                  "value": "CHCA000035",
+                  "label": "行业股票-科技、传媒及通讯"
+                },
+                {
+                  "value": "CHCA000039",
+                  "label": "行业股票 - 消费"
+                },
+                {
+                  "value": "CHCA000038",
+                  "label": "行业股票 - 金融地产"
+                },
+                {
+                  "value": "CHCA000047",
+                  "label": "行业股票 - 其它"
+                }
+              ]
+            },
+            {
+              "label": "混合型",
+              "options": [
+                {
+                  "value": "CHCA000055",
+                  "label": "积极配置 - 大盘成长"
+                },
+                {
+                  "value": "PGSZB4TTTT",
+                  "label": "积极配置 - 大盘平衡"
+                },
+                {
+                  "value": "CHCA000056",
+                  "label": "积极配置 - 中小盘"
+                },
+                {
+                  "value": "PGSZA3TTTT",
+                  "label": "标准混合"
+                },
+                {
+                  "value": "PGSZB3TTTT",
+                  "label": "保守混合"
+                },
+                {
+                  "value": "CHCA000032",
+                  "label": "灵活配置"
+                },
+                {
+                  "value": "CHCA000050",
+                  "label": "港股积极配置"
+                },
+                {
+                  "value": "CHCA000043",
+                  "label": "沪港深积极配置"
+                },
+                {
+                  "value": "CHCA000044",
+                  "label": "沪港深保守混合"
+                },
+                {
+                  "value": "CHCA000036",
+                  "label": "沪港深灵活配置"
+                },
+                {
+                  "value": "CHCA000041",
+                  "label": "行业混合 - 医药"
+                },
+                {
+                  "value": "CHCA000042",
+                  "label": "行业混合 - 科技、传媒及通讯"
+                },
+                {
+                  "value": "CHCA000040",
+                  "label": "行业混合 - 消费"
+                },
+                {
+                  "value": "CHCA000045",
+                  "label": "目标日期"
+                },
+                {
+                  "value": "CHCA000057",
+                  "label": "基础设施REITs"
+                }
+              ]
+            },
+            {
+              "label": "可转债",
+              "options": [
+                {
+                  "value": "CHCA000024",
+                  "label": "可转债"
+                }
+              ]
+            },
+            {
+              "label": "债券型",
+              "options": [
+                {
+                  "value": "PGSZB5TTTT",
+                  "label": "积极债券"
+                },
+                {
+                  "value": "PGSZA2TTTT",
+                  "label": "普通债券"
+                },
+                {
+                  "value": "CHCA000023",
+                  "label": "纯债"
+                },
+                {
+                  "value": "CHCA000048",
+                  "label": "利率债"
+                },
+                {
+                  "value": "CHCA000049",
+                  "label": "信用债"
+                },
+                {
+                  "value": "PGSZB2TTTT",
+                  "label": "短债"
+                }
+              ]
+            },
+            {
+              "label": "货币型",
+              "options": [
+                {
+                  "value": "PGSZ04TTTT",
+                  "label": "货币市场"
+                }
+              ]
+            },
+            {
+              "label": "另类",
+              "options": [
+                {
+                  "value": "CHCA000025",
+                  "label": "市场中性策略"
+                }
+              ]
+            },
+            {
+              "label": "商品",
+              "options": [
+                {
+                  "value": "CHCA000046",
+                  "label": "商品 - 贵金属"
+                },
+                {
+                  "value": "CHCA000026",
+                  "label": "商品 - 其它"
+                }
+              ]
+            },
+            {
+              "label": "QDII及其它",
+              "options": [
+                {
+                  "value": "CHCA000020",
+                  "label": "其它"
+                },
+                {
+                  "value": "CHCA000002",
+                  "label": "QDII亚太区不包括日本股票"
+                },
+                {
+                  "value": "CHCA000009",
+                  "label": "QDII 大中华区股票"
+                },
+                {
+                  "value": "CHCA000005",
+                  "label": "QDII 新兴市场股票"
+                },
+                {
+                  "value": "CHCA000006",
+                  "label": "QDII环球股票"
+                },
+                {
+                  "value": "CHCA000014",
+                  "label": "QDII美国股票"
+                },
+                {
+                  "value": "CHCA000011",
+                  "label": "QDII行业股票"
+                },
+                {
+                  "value": "CHCA000016",
+                  "label": "QDII 环球股债混合"
+                },
+                {
+                  "value": "CHCA000030",
+                  "label": "QDII全球新兴市场股债混合"
+                },
+                {
+                  "value": "CHCA000029",
+                  "label": "QDII 亚洲股债混合"
+                },
+                {
+                  "value": "CHCA000031",
+                  "label": "QDII大中华区股债混合"
+                },
+                {
+                  "value": "CHCA000021",
+                  "label": "QDII环球债券"
+                },
+                {
+                  "value": "CHCA000022",
+                  "label": "QDII商品"
+                },
+                {
+                  "value": "CHCA000028",
+                  "label": "QDII其它"
+                }
+              ]
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "categoryId",
+              "label": "晨星分类",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null,
+              "values": [
+                {
+                  "label": "大盘成长股票",
+                  "value": "CHCA000051",
+                  "group": "股票型"
+                },
+                {
+                  "label": "大盘平衡股票",
+                  "value": "PGSZ01TTTT",
+                  "group": "股票型"
+                },
+                {
+                  "label": "大盘价值股票",
+                  "value": "CHCA000052",
+                  "group": "股票型"
+                },
+                {
+                  "label": "中盘成长股票",
+                  "value": "CHCA000053",
+                  "group": "股票型"
+                },
+                {
+                  "label": "中盘平衡股票",
+                  "value": "CHCA000054",
+                  "group": "股票型"
+                },
+                {
+                  "label": "香港股票",
+                  "value": "CHCA000037",
+                  "group": "股票型"
+                },
+                {
+                  "label": "沪港深股票",
+                  "value": "CHCA000033",
+                  "group": "股票型"
+                },
+                {
+                  "label": "行业股票-医药",
+                  "value": "CHCA000034",
+                  "group": "股票型"
+                },
+                {
+                  "label": "行业股票-科技、传媒及通讯",
+                  "value": "CHCA000035",
+                  "group": "股票型"
+                },
+                {
+                  "label": "行业股票 - 消费",
+                  "value": "CHCA000039",
+                  "group": "股票型"
+                },
+                {
+                  "label": "行业股票 - 金融地产",
+                  "value": "CHCA000038",
+                  "group": "股票型"
+                },
+                {
+                  "label": "行业股票 - 其它",
+                  "value": "CHCA000047",
+                  "group": "股票型"
+                },
+                {
+                  "label": "积极配置 - 大盘成长",
+                  "value": "CHCA000055",
+                  "group": "混合型"
+                },
+                {
+                  "label": "积极配置 - 大盘平衡",
+                  "value": "PGSZB4TTTT",
+                  "group": "混合型"
+                },
+                {
+                  "label": "积极配置 - 中小盘",
+                  "value": "CHCA000056",
+                  "group": "混合型"
+                },
+                {
+                  "label": "标准混合",
+                  "value": "PGSZA3TTTT",
+                  "group": "混合型"
+                },
+                {
+                  "label": "保守混合",
+                  "value": "PGSZB3TTTT",
+                  "group": "混合型"
+                },
+                {
+                  "label": "灵活配置",
+                  "value": "CHCA000032",
+                  "group": "混合型"
+                },
+                {
+                  "label": "港股积极配置",
+                  "value": "CHCA000050",
+                  "group": "混合型"
+                },
+                {
+                  "label": "沪港深积极配置",
+                  "value": "CHCA000043",
+                  "group": "混合型"
+                },
+                {
+                  "label": "沪港深保守混合",
+                  "value": "CHCA000044",
+                  "group": "混合型"
+                },
+                {
+                  "label": "沪港深灵活配置",
+                  "value": "CHCA000036",
+                  "group": "混合型"
+                },
+                {
+                  "label": "行业混合 - 医药",
+                  "value": "CHCA000041",
+                  "group": "混合型"
+                },
+                {
+                  "label": "行业混合 - 科技、传媒及通讯",
+                  "value": "CHCA000042",
+                  "group": "混合型"
+                },
+                {
+                  "label": "行业混合 - 消费",
+                  "value": "CHCA000040",
+                  "group": "混合型"
+                },
+                {
+                  "label": "目标日期",
+                  "value": "CHCA000045",
+                  "group": "混合型"
+                },
+                {
+                  "label": "基础设施REITs",
+                  "value": "CHCA000057",
+                  "group": "混合型"
+                },
+                {
+                  "label": "可转债",
+                  "value": "CHCA000024",
+                  "group": "可转债"
+                },
+                {
+                  "label": "积极债券",
+                  "value": "PGSZB5TTTT",
+                  "group": "债券型"
+                },
+                {
+                  "label": "普通债券",
+                  "value": "PGSZA2TTTT",
+                  "group": "债券型"
+                },
+                {
+                  "label": "纯债",
+                  "value": "CHCA000023",
+                  "group": "债券型"
+                },
+                {
+                  "label": "利率债",
+                  "value": "CHCA000048",
+                  "group": "债券型"
+                },
+                {
+                  "label": "信用债",
+                  "value": "CHCA000049",
+                  "group": "债券型"
+                },
+                {
+                  "label": "短债",
+                  "value": "PGSZB2TTTT",
+                  "group": "债券型"
+                },
+                {
+                  "label": "货币市场",
+                  "value": "PGSZ04TTTT",
+                  "group": "货币型"
+                },
+                {
+                  "label": "市场中性策略",
+                  "value": "CHCA000025",
+                  "group": "另类"
+                },
+                {
+                  "label": "商品 - 贵金属",
+                  "value": "CHCA000046",
+                  "group": "商品"
+                },
+                {
+                  "label": "商品 - 其它",
+                  "value": "CHCA000026",
+                  "group": "商品"
+                },
+                {
+                  "label": "其它",
+                  "value": "CHCA000020",
+                  "group": "QDII及其它"
+                },
+                {
+                  "label": "QDII亚太区不包括日本股票",
+                  "value": "CHCA000002",
+                  "group": "QDII及其它"
+                },
+                {
+                  "label": "QDII 大中华区股票",
+                  "value": "CHCA000009",
+                  "group": "QDII及其它"
+                },
+                {
+                  "label": "QDII 新兴市场股票",
+                  "value": "CHCA000005",
+                  "group": "QDII及其它"
+                },
+                {
+                  "label": "QDII环球股票",
+                  "value": "CHCA000006",
+                  "group": "QDII及其它"
+                },
+                {
+                  "label": "QDII美国股票",
+                  "value": "CHCA000014",
+                  "group": "QDII及其它"
+                },
+                {
+                  "label": "QDII行业股票",
+                  "value": "CHCA000011",
+                  "group": "QDII及其它"
+                },
+                {
+                  "label": "QDII 环球股债混合",
+                  "value": "CHCA000016",
+                  "group": "QDII及其它"
+                },
+                {
+                  "label": "QDII全球新兴市场股债混合",
+                  "value": "CHCA000030",
+                  "group": "QDII及其它"
+                },
+                {
+                  "label": "QDII 亚洲股债混合",
+                  "value": "CHCA000029",
+                  "group": "QDII及其它"
+                },
+                {
+                  "label": "QDII大中华区股债混合",
+                  "value": "CHCA000031",
+                  "group": "QDII及其它"
+                },
+                {
+                  "label": "QDII环球债券",
+                  "value": "CHCA000021",
+                  "group": "QDII及其它"
+                },
+                {
+                  "label": "QDII商品",
+                  "value": "CHCA000022",
+                  "group": "QDII及其它"
+                },
+                {
+                  "label": "QDII其它",
+                  "value": "CHCA000028",
+                  "group": "QDII及其它"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "风险等级",
+          "dp": "totalRisk",
+          "source": "all",
+          "component": "checkbox",
+          "comments": "晨星对全市场公募基金出具的适当性风险等级，主要通过基金持仓风险、晨星评级调整风险、业绩波动风险、业绩下跌风险、短期业绩风险和基金规模风险等多维指标综合计算得出。",
+          "items": [
+            {
+              "value": "1",
+              "label": "低风险(R1)"
+            },
+            {
+              "value": "2",
+              "label": "中低风险(R2)"
+            },
+            {
+              "value": "3",
+              "label": "中风险(R3)"
+            },
+            {
+              "value": "4",
+              "label": "中高风险(R4)"
+            },
+            {
+              "value": "5",
+              "label": "高风险(R5)"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "totalRisk",
+              "label": "风险等级",
+              "valueType": "string-array",
+              "unit": null,
+              "sliderType": null,
+              "values": [
+                {
+                  "label": "低风险(R1)",
+                  "value": "1"
+                },
+                {
+                  "label": "中低风险(R2)",
+                  "value": "2"
+                },
+                {
+                  "label": "中风险(R3)",
+                  "value": "3"
+                },
+                {
+                  "label": "中高风险(R4)",
+                  "value": "4"
+                },
+                {
+                  "label": "高风险(R5)",
+                  "value": "5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "成立时间",
+          "dp": "inceptionDate",
+          "source": "all",
+          "component": "radio",
+          "items": [
+            {
+              "label": "1年以上",
+              "value": ">1"
+            },
+            {
+              "label": "3年以上",
+              "value": ">3"
+            },
+            {
+              "label": "大于5年",
+              "value": ">5"
+            },
+            {
+              "label": "大于7年",
+              "value": ">7"
+            },
+            {
+              "label": "大于10年",
+              "value": ">10"
+            },
+            {
+              "label": "自定义",
+              "value": "custom",
+              "type": "int",
+              "min": 0,
+              "max": 50,
+              "step": 1,
+              "unit": "年"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "inceptionDate",
+              "label": "成立时间",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null,
+              "values": [
+                {
+                  "label": "1年以上",
+                  "value": ">1"
+                },
+                {
+                  "label": "3年以上",
+                  "value": ">3"
+                },
+                {
+                  "label": "大于5年",
+                  "value": ">5"
+                },
+                {
+                  "label": "大于7年",
+                  "value": ">7"
+                },
+                {
+                  "label": "大于10年",
+                  "value": ">10"
+                },
+                {
+                  "label": "自定义",
+                  "value": "custom"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "基金规模",
+          "dp": "fundSize",
+          "source": "all",
+          "component": "checkbox",
+          "comments": "基金各个份额的加总规模",
+          "items": [
+            {
+              "value": "0~1",
+              "label": "0~1亿"
+            },
+            {
+              "value": "1~5",
+              "label": "1~5亿"
+            },
+            {
+              "value": "5~10",
+              "label": "5~10亿"
+            },
+            {
+              "value": "10~50",
+              "label": "10~50亿"
+            },
+            {
+              "value": "50~100",
+              "label": "50~100亿"
+            },
+            {
+              "value": ">100",
+              "label": "大于100亿"
+            },
+            {
+              "label": "自定义",
+              "value": "custom",
+              "type": "number",
+              "min": 0,
+              "max": 10000,
+              "step": 1,
+              "unit": "亿",
+              "startValue": 0,
+              "endValue": 100
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "fundSize",
+              "label": "基金规模",
+              "valueType": "string-array",
+              "unit": null,
+              "sliderType": null,
+              "values": [
+                {
+                  "label": "0~1亿",
+                  "value": "0~1"
+                },
+                {
+                  "label": "1~5亿",
+                  "value": "1~5"
+                },
+                {
+                  "label": "5~10亿",
+                  "value": "5~10"
+                },
+                {
+                  "label": "10~50亿",
+                  "value": "10~50"
+                },
+                {
+                  "label": "50~100亿",
+                  "value": "50~100"
+                },
+                {
+                  "label": "大于100亿",
+                  "value": ">100"
+                },
+                {
+                  "label": "自定义",
+                  "value": "custom"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "份额规模",
+          "dp": "shareclassTNA",
+          "source": "all",
+          "component": "checkbox",
+          "comments": "份额规模是指特定投资基金中的总资产价值，通常以货币金额表示。它反映了基金的规模和资本量，可以用来评估基金的规模是否适合特定投资策略和目标。规模较大的基金可能有较多的资源，但也可能面临投资效益下降的风险。",
+          "items": [
+            {
+              "value": "0~1",
+              "label": "0~1亿"
+            },
+            {
+              "value": "1~5",
+              "label": "1~5亿"
+            },
+            {
+              "value": "5~10",
+              "label": "5~10亿"
+            },
+            {
+              "value": "10~50",
+              "label": "10~50亿"
+            },
+            {
+              "value": "50~100",
+              "label": "50~100亿"
+            },
+            {
+              "value": ">100",
+              "label": "大于100亿"
+            },
+            {
+              "label": "自定义",
+              "value": "custom",
+              "type": "number",
+              "min": 0,
+              "max": 10000,
+              "step": 1,
+              "unit": "亿",
+              "startValue": 0,
+              "endValue": 100
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "shareclassTNA",
+              "label": "份额规模",
+              "valueType": "string-array",
+              "unit": null,
+              "sliderType": null,
+              "values": [
+                {
+                  "label": "0~1亿",
+                  "value": "0~1"
+                },
+                {
+                  "label": "1~5亿",
+                  "value": "1~5"
+                },
+                {
+                  "label": "5~10亿",
+                  "value": "5~10"
+                },
+                {
+                  "label": "10~50亿",
+                  "value": "10~50"
+                },
+                {
+                  "label": "50~100亿",
+                  "value": "50~100"
+                },
+                {
+                  "label": "大于100亿",
+                  "value": ">100"
+                },
+                {
+                  "label": "自定义",
+                  "value": "custom"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "最长任职时间",
+          "dp": "longestTenure",
+          "source": "all",
+          "component": "range-slider",
+          "sliderType": "year",
+          "comments": "现任基金经理管理该基金的时长，如有多个则取最长任职时间",
+          "requestFields": [
+            {
+              "field": "longestTenure",
+              "label": "最长任职时间",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "year"
+            }
+          ]
+        },
+        {
+          "label": "持有人结构",
+          "source": "local",
+          "component": "group-flat",
+          "items": [
+            {
+              "label": "机构占比",
+              "dp": "institutionalInvestorsSharesPercentage",
+              "component": "range-slider"
+            },
+            {
+              "label": "个人占比",
+              "dp": "individualInvestorsSharesPercentage",
+              "component": "range-slider"
+            },
+            {
+              "label": "基金经理持有份额（万份）",
+              "dp": "managerOwnership10kshares",
+              "component": "radio",
+              "items": [
+                {
+                  "value": "1",
+                  "label": "0-10"
+                },
+                {
+                  "value": "2",
+                  "label": "10-50"
+                },
+                {
+                  "value": "3",
+                  "label": "50-100"
+                },
+                {
+                  "value": "4",
+                  "label": ">100"
+                },
+                {
+                  "value": "0",
+                  "label": "无"
+                }
+              ]
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "institutionalInvestorsSharesPercentage",
+              "label": "机构占比",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "individualInvestorsSharesPercentage",
+              "label": "个人占比",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "managerOwnership10kshares",
+              "label": "基金经理持有份额（万份）",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            }
+          ]
+        },
+        {
+          "label": "申购状态",
+          "dp": "subscription",
+          "source": "local",
+          "component": "checkbox",
+          "comments": "",
+          "items": [
+            {
+              "value": "不可申购",
+              "label": "不可申购"
+            },
+            {
+              "value": "可申购",
+              "label": "可申购"
+            },
+            {
+              "value": "封闭期",
+              "label": "封闭期"
+            },
+            {
+              "value": "限大额",
+              "label": "限大额"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "subscription",
+              "label": "申购状态",
+              "valueType": "string-array",
+              "unit": null,
+              "sliderType": null,
+              "values": [
+                {
+                  "label": "不可申购",
+                  "value": "不可申购"
+                },
+                {
+                  "label": "可申购",
+                  "value": "可申购"
+                },
+                {
+                  "label": "封闭期",
+                  "value": "封闭期"
+                },
+                {
+                  "label": "限大额",
+                  "value": "限大额"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "申购限制",
+          "dp": "applyingMaxIv",
+          "source": "local",
+          "component": "checkbox",
+          "comments": "该基金针对个人投资者的单日限购金额",
+          "items": [
+            {
+              "value": "null",
+              "label": "无"
+            },
+            {
+              "value": "<100",
+              "label": "小于100"
+            },
+            {
+              "value": "100~1000",
+              "label": "100-1000"
+            },
+            {
+              "value": "1000~10000",
+              "label": "1000-10000"
+            },
+            {
+              "value": ">10000",
+              "label": "大于10000"
+            },
+            {
+              "label": "自定义",
+              "value": "custom",
+              "type": "number",
+              "min": 0,
+              "max": 100000000,
+              "step": 100,
+              "unit": "元",
+              "startValue": 0,
+              "endValue": 100000000
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "applyingMaxIv",
+              "label": "申购限制",
+              "valueType": "string-array",
+              "unit": null,
+              "sliderType": null,
+              "values": [
+                {
+                  "label": "无",
+                  "value": "null"
+                },
+                {
+                  "label": "小于100",
+                  "value": "<100"
+                },
+                {
+                  "label": "100-1000",
+                  "value": "100~1000"
+                },
+                {
+                  "label": "1000-10000",
+                  "value": "1000~10000"
+                },
+                {
+                  "label": "大于10000",
+                  "value": ">10000"
+                },
+                {
+                  "label": "自定义",
+                  "value": "custom"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "锁定期",
+          "dp": "closeOpenPeriod",
+          "source": "local",
+          "component": "checkbox",
+          "comments": "投资者认购 / 申购基金后，需在约定期限内持有、不得赎回的特定时间",
+          "items": [
+            {
+              "value": "null",
+              "label": "无"
+            },
+            {
+              "value": "<1",
+              "label": "小于1年"
+            },
+            {
+              "value": "1~3",
+              "label": "1-3年"
+            },
+            {
+              "value": "3~5",
+              "label": "3-5年"
+            },
+            {
+              "value": ">5",
+              "label": "大于5年"
+            },
+            {
+              "label": "自定义",
+              "value": "custom",
+              "type": "number",
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "unit": "年",
+              "startValue": 0,
+              "endValue": 100
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "closeOpenPeriod",
+              "label": "锁定期",
+              "valueType": "string-array",
+              "unit": null,
+              "sliderType": null,
+              "values": [
+                {
+                  "label": "无",
+                  "value": "null"
+                },
+                {
+                  "label": "小于1年",
+                  "value": "<1"
+                },
+                {
+                  "label": "1-3年",
+                  "value": "1~3"
+                },
+                {
+                  "label": "3-5年",
+                  "value": "3~5"
+                },
+                {
+                  "label": "大于5年",
+                  "value": ">5"
+                },
+                {
+                  "label": "自定义",
+                  "value": "custom"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "重要属性",
+          "source": "all",
+          "component": "checkbox-ternary",
+          "items": [
+            {
+              "dp": "srDate",
+              "label": "转型"
+            },
+            {
+              "dp": "indexFund",
+              "label": "指数"
+            },
+            {
+              "dp": "enhancedIndexFund",
+              "label": "指数增强"
+            },
+            {
+              "dp": "fundOfFunds",
+              "label": "FOF"
+            },
+            {
+              "dp": "oldestShareId",
+              "label": "基本份额"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "srDate",
+              "label": "转型",
+              "valueType": "boolean-string",
+              "values": [
+                "true",
+                "false"
+              ]
+            },
+            {
+              "field": "indexFund",
+              "label": "指数",
+              "valueType": "boolean-string",
+              "values": [
+                "true",
+                "false"
+              ]
+            },
+            {
+              "field": "enhancedIndexFund",
+              "label": "指数增强",
+              "valueType": "boolean-string",
+              "values": [
+                "true",
+                "false"
+              ]
+            },
+            {
+              "field": "fundOfFunds",
+              "label": "FOF",
+              "valueType": "boolean-string",
+              "values": [
+                "true",
+                "false"
+              ]
+            },
+            {
+              "field": "oldestShareId",
+              "label": "基本份额",
+              "valueType": "boolean-string",
+              "values": [
+                "true",
+                "false"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "业绩指标",
+      "controls": [
+        {
+          "label": "晨星评级",
+          "source": "all",
+          "component": "select-options",
+          "items": [
+            {
+              "value": "rating3Y",
+              "label": "三年"
+            },
+            {
+              "value": "rating5Y",
+              "label": "五年"
+            },
+            {
+              "value": "rating10Y",
+              "label": "十年"
+            }
+          ],
+          "options": [
+            {
+              "value": "5",
+              "type": "rating"
+            },
+            {
+              "value": "4",
+              "type": "rating"
+            },
+            {
+              "value": "3",
+              "type": "rating"
+            },
+            {
+              "value": "2",
+              "type": "rating"
+            },
+            {
+              "value": "1",
+              "type": "rating"
+            },
+            {
+              "value": "0",
+              "label": "无"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "rating3Y",
+              "label": "三年",
+              "valueType": "string-array",
+              "values": [
+                {
+                  "label": "5",
+                  "value": "5"
+                },
+                {
+                  "label": "4",
+                  "value": "4"
+                },
+                {
+                  "label": "3",
+                  "value": "3"
+                },
+                {
+                  "label": "2",
+                  "value": "2"
+                },
+                {
+                  "label": "1",
+                  "value": "1"
+                },
+                {
+                  "label": "无",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "field": "rating5Y",
+              "label": "五年",
+              "valueType": "string-array",
+              "values": [
+                {
+                  "label": "5",
+                  "value": "5"
+                },
+                {
+                  "label": "4",
+                  "value": "4"
+                },
+                {
+                  "label": "3",
+                  "value": "3"
+                },
+                {
+                  "label": "2",
+                  "value": "2"
+                },
+                {
+                  "label": "1",
+                  "value": "1"
+                },
+                {
+                  "label": "无",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "field": "rating10Y",
+              "label": "十年",
+              "valueType": "string-array",
+              "values": [
+                {
+                  "label": "5",
+                  "value": "5"
+                },
+                {
+                  "label": "4",
+                  "value": "4"
+                },
+                {
+                  "label": "3",
+                  "value": "3"
+                },
+                {
+                  "label": "2",
+                  "value": "2"
+                },
+                {
+                  "label": "1",
+                  "value": "1"
+                },
+                {
+                  "label": "无",
+                  "value": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "晨星风险评级",
+          "source": "all",
+          "component": "select-options",
+          "comments": "晨星风险评级源于晨星风险（Morningstar Risk）指标，并在每个晨星分类中按从低到高分为五档，主要衡量基金的下行波动率。",
+          "items": [
+            {
+              "value": "riskRating3Y",
+              "label": "三年"
+            },
+            {
+              "value": "riskRating5Y",
+              "label": "五年"
+            },
+            {
+              "value": "riskRating10Y",
+              "label": "十年"
+            }
+          ],
+          "options": [
+            {
+              "value": "5",
+              "label": "高"
+            },
+            {
+              "value": "4",
+              "label": "中高"
+            },
+            {
+              "value": "3",
+              "label": "中"
+            },
+            {
+              "value": "2",
+              "label": "中低"
+            },
+            {
+              "value": "1",
+              "label": "低"
+            },
+            {
+              "value": "0",
+              "label": "无"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "riskRating3Y",
+              "label": "三年",
+              "valueType": "string-array",
+              "values": [
+                {
+                  "label": "高",
+                  "value": "5"
+                },
+                {
+                  "label": "中高",
+                  "value": "4"
+                },
+                {
+                  "label": "中",
+                  "value": "3"
+                },
+                {
+                  "label": "中低",
+                  "value": "2"
+                },
+                {
+                  "label": "低",
+                  "value": "1"
+                },
+                {
+                  "label": "无",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "field": "riskRating5Y",
+              "label": "五年",
+              "valueType": "string-array",
+              "values": [
+                {
+                  "label": "高",
+                  "value": "5"
+                },
+                {
+                  "label": "中高",
+                  "value": "4"
+                },
+                {
+                  "label": "中",
+                  "value": "3"
+                },
+                {
+                  "label": "中低",
+                  "value": "2"
+                },
+                {
+                  "label": "低",
+                  "value": "1"
+                },
+                {
+                  "label": "无",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "field": "riskRating10Y",
+              "label": "十年",
+              "valueType": "string-array",
+              "values": [
+                {
+                  "label": "高",
+                  "value": "5"
+                },
+                {
+                  "label": "中高",
+                  "value": "4"
+                },
+                {
+                  "label": "中",
+                  "value": "3"
+                },
+                {
+                  "label": "中低",
+                  "value": "2"
+                },
+                {
+                  "label": "低",
+                  "value": "1"
+                },
+                {
+                  "label": "无",
+                  "value": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "基金回报(月末)",
+          "source": "local",
+          "component": "group-switch-range",
+          "items": [
+            {
+              "dp": "returnYTD_M",
+              "sliderType": "range",
+              "unit": "%",
+              "label": "今年以来"
+            },
+            {
+              "dp": "return1Month_M",
+              "sliderType": "range",
+              "unit": "%",
+              "label": "1个月"
+            },
+            {
+              "dp": "return3Month_M",
+              "sliderType": "range",
+              "unit": "%",
+              "label": "3个月"
+            },
+            {
+              "dp": "return6Month_M",
+              "sliderType": "range",
+              "unit": "%",
+              "label": "6个月"
+            },
+            {
+              "dp": "return1Year_M",
+              "sliderType": "range",
+              "unit": "%",
+              "label": "一年"
+            },
+            {
+              "sliderType": "range",
+              "unit": "%",
+              "dpList": [
+                {
+                  "label": "累计",
+                  "value": "accReturn3Year_M"
+                },
+                {
+                  "label": "年化",
+                  "value": "return3Year_M"
+                }
+              ],
+              "label": "三年"
+            },
+            {
+              "sliderType": "range",
+              "unit": "%",
+              "dpList": [
+                {
+                  "label": "累计",
+                  "value": "accReturn5Year_M"
+                },
+                {
+                  "label": "年化",
+                  "value": "return5Year_M"
+                }
+              ],
+              "label": "五年"
+            },
+            {
+              "sliderType": "range",
+              "unit": "%",
+              "dpList": [
+                {
+                  "label": "累计",
+                  "value": "accReturn7Year_M"
+                },
+                {
+                  "label": "年化",
+                  "value": "return7Year_M"
+                }
+              ],
+              "label": "七年"
+            },
+            {
+              "sliderType": "range",
+              "unit": "%",
+              "dpList": [
+                {
+                  "label": "累计",
+                  "value": "accReturn10Year_M"
+                },
+                {
+                  "label": "年化",
+                  "value": "return10Year_M"
+                }
+              ],
+              "label": "十年"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "returnYTD_M",
+              "label": "今年以来",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "return1Month_M",
+              "label": "1个月",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "return3Month_M",
+              "label": "3个月",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "return6Month_M",
+              "label": "6个月",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "return1Year_M",
+              "label": "一年",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "accReturn3Year_M",
+              "label": "三年 - 累计",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "return3Year_M",
+              "label": "三年 - 年化",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "accReturn5Year_M",
+              "label": "五年 - 累计",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "return5Year_M",
+              "label": "五年 - 年化",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "accReturn7Year_M",
+              "label": "七年 - 累计",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "return7Year_M",
+              "label": "七年 - 年化",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "accReturn10Year_M",
+              "label": "十年 - 累计",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "return10Year_M",
+              "label": "十年 - 年化",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "基金排名(月末)",
+          "dp": "return",
+          "source": "local",
+          "component": "group-switch-range",
+          "items": [
+            {
+              "dp": "return1MonthRankP_M",
+              "label": "1个月"
+            },
+            {
+              "dp": "return3MonthRankP_M",
+              "label": "3个月"
+            },
+            {
+              "dp": "return6MonthRankP_M",
+              "label": "6个月"
+            },
+            {
+              "dp": "return1YearRankP_M",
+              "label": "一年"
+            },
+            {
+              "dp": "return3YearRankP_M",
+              "label": "三年"
+            },
+            {
+              "dp": "return5YearRankP_M",
+              "label": "五年"
+            },
+            {
+              "dp": "return7YearRankP_M",
+              "label": "七年"
+            },
+            {
+              "dp": "return10YearRankP_M",
+              "label": "十年"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "return1MonthRankP_M",
+              "label": "1个月",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "return3MonthRankP_M",
+              "label": "3个月",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "return6MonthRankP_M",
+              "label": "6个月",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "return1YearRankP_M",
+              "label": "一年",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "return3YearRankP_M",
+              "label": "三年",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "return5YearRankP_M",
+              "label": "五年",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "return7YearRankP_M",
+              "label": "七年",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "return10YearRankP_M",
+              "label": "十年",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            }
+          ]
+        },
+        {
+          "label": "夏普比率(月末)",
+          "dp": "sharpeRatio",
+          "source": "local",
+          "component": "group-switch-range",
+          "comments": "衡量基金风险调整后收益的一个指标，一般来说越大越好。需要注意的是，夏普比率为负值时无比较意义，建议使用该指标时至少要筛选该指标大于0的基金",
+          "items": [
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "sharpeRatioRankP_1Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "sharpeRatio_1Y"
+                }
+              ],
+              "label": "一年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "sharpeRatioRankP_3Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "sharpeRatio_3Y"
+                }
+              ],
+              "label": "三年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "sharpeRatioRankP_5Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "sharpeRatio_5Y"
+                }
+              ],
+              "label": "五年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "sharpeRatioRankP_10Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "sharpeRatio_10Y"
+                }
+              ],
+              "label": "十年"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "sharpeRatioRankP_1Y",
+              "label": "一年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "sharpeRatio_1Y",
+              "label": "一年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "sharpeRatioRankP_3Y",
+              "label": "三年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "sharpeRatio_3Y",
+              "label": "三年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "sharpeRatioRankP_5Y",
+              "label": "五年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "sharpeRatio_5Y",
+              "label": "五年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "sharpeRatioRankP_10Y",
+              "label": "十年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "sharpeRatio_10Y",
+              "label": "十年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "最大回撤(月末)",
+          "dp": "maximumDrawdown",
+          "source": "local",
+          "component": "group-switch-range",
+          "comments": "基金过往期间下跌幅度的最大值，该指标为负值，其绝对值越小越好",
+          "items": [
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "maximumDrawdownRankP_1Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "negative": true,
+                  "unit": "%",
+                  "value": "maximumDrawdown_1Y"
+                }
+              ],
+              "label": "一年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "maximumDrawdownRankP_3Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "negative": true,
+                  "unit": "%",
+                  "value": "maximumDrawdown_3Y"
+                }
+              ],
+              "label": "三年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "maximumDrawdownRankP_5Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "negative": true,
+                  "unit": "%",
+                  "value": "maximumDrawdown_5Y"
+                }
+              ],
+              "label": "五年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "maximumDrawdownRankP_10Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "negative": true,
+                  "unit": "%",
+                  "value": "maximumDrawdown_10Y"
+                }
+              ],
+              "label": "十年"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "maximumDrawdownRankP_1Y",
+              "label": "一年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "maximumDrawdown_1Y",
+              "label": "一年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "maximumDrawdownRankP_3Y",
+              "label": "三年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "maximumDrawdown_3Y",
+              "label": "三年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "maximumDrawdownRankP_5Y",
+              "label": "五年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "maximumDrawdown_5Y",
+              "label": "五年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "maximumDrawdownRankP_10Y",
+              "label": "十年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "maximumDrawdown_10Y",
+              "label": "十年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "标准差",
+          "dp": "sTD",
+          "source": "local",
+          "component": "group-switch-range",
+          "comments": "衡量基金风险大小的重要指标，该指标越小越好。",
+          "items": [
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "sTDRankP_1Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "sTD_1Y"
+                }
+              ],
+              "label": "一年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "sTDRankP_3Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "sTD_3Y"
+                }
+              ],
+              "label": "三年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "sTDRankP_5Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "sTD_5Y"
+                }
+              ],
+              "label": "五年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "sTDRankP_10Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "sTD_10Y"
+                }
+              ],
+              "label": "十年"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "sTDRankP_1Y",
+              "label": "一年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "sTD_1Y",
+              "label": "一年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "sTDRankP_3Y",
+              "label": "三年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "sTD_3Y",
+              "label": "三年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "sTDRankP_5Y",
+              "label": "五年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "sTD_5Y",
+              "label": "五年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "sTDRankP_10Y",
+              "label": "十年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "sTD_10Y",
+              "label": "十年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "卡玛比率",
+          "dp": "gamaRatio",
+          "source": "local",
+          "component": "group-switch-range",
+          "comments": "衡量基金风险调整后收益的指标，使用时建议至少选择该指标为大于0的基金",
+          "items": [
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "gamaRatioRankP_1Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "gamaRatio_1Y"
+                }
+              ],
+              "label": "一年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "gamaRatioRankP_3Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "gamaRatio_3Y"
+                }
+              ],
+              "label": "三年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "gamaRatioRankP_5Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "gamaRatio_5Y"
+                }
+              ],
+              "label": "五年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "gamaRatioRankP_10Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "gamaRatio_10Y"
+                }
+              ],
+              "label": "十年"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "gamaRatioRankP_1Y",
+              "label": "一年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "gamaRatio_1Y",
+              "label": "一年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "gamaRatioRankP_3Y",
+              "label": "三年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "gamaRatio_3Y",
+              "label": "三年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "gamaRatioRankP_5Y",
+              "label": "五年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "gamaRatio_5Y",
+              "label": "五年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "gamaRatioRankP_10Y",
+              "label": "十年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "gamaRatio_10Y",
+              "label": "十年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "索提诺比率",
+          "dp": "sortinoRatio",
+          "source": "local",
+          "component": "group-switch-range",
+          "comments": "衡量基金风险调整后收益的指标，使用时建议至少选择该指标为大于0的基金",
+          "items": [
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "sortinoRatioRankP_1Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "sortinoRatio_1Y"
+                }
+              ],
+              "label": "一年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "sortinoRatioRankP_3Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "sortinoRatio_3Y"
+                }
+              ],
+              "label": "三年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "sortinoRatioRankP_5Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "sortinoRatio_5Y"
+                }
+              ],
+              "label": "五年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "sortinoRatioRankP_10Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "sortinoRatio_10Y"
+                }
+              ],
+              "label": "十年"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "sortinoRatioRankP_1Y",
+              "label": "一年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "sortinoRatio_1Y",
+              "label": "一年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "sortinoRatioRankP_3Y",
+              "label": "三年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "sortinoRatio_3Y",
+              "label": "三年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "sortinoRatioRankP_5Y",
+              "label": "五年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "sortinoRatio_5Y",
+              "label": "五年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "sortinoRatioRankP_10Y",
+              "label": "十年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "sortinoRatio_10Y",
+              "label": "十年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "R平方",
+          "dp": "rSquaredToInd",
+          "source": "local",
+          "component": "group-switch-range",
+          "comments": "反映基准指数的变动对基金表现的影响，影响程度以0至100计，其中100意味着基金的业绩表现完全由基准指数影响",
+          "items": [
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "rSquaredToIndRankP_1Y"
+                },
+                {
+                  "label": "原始值",
+                  "value": "rSquaredToInd_1Y"
+                }
+              ],
+              "label": "一年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "rSquaredToIndRankP_3Y"
+                },
+                {
+                  "label": "原始值",
+                  "value": "rSquaredToInd_3Y"
+                }
+              ],
+              "label": "三年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "rSquaredToIndRankP_5Y"
+                },
+                {
+                  "label": "原始值",
+                  "value": "rSquaredToInd_5Y"
+                }
+              ],
+              "label": "五年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "rSquaredToIndRankP_10Y"
+                },
+                {
+                  "label": "原始值",
+                  "value": "rSquaredToInd_10Y"
+                }
+              ],
+              "label": "十年"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "rSquaredToIndRankP_1Y",
+              "label": "一年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "rSquaredToInd_1Y",
+              "label": "一年 - 原始值",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "rSquaredToIndRankP_3Y",
+              "label": "三年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "rSquaredToInd_3Y",
+              "label": "三年 - 原始值",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "rSquaredToIndRankP_5Y",
+              "label": "五年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "rSquaredToInd_5Y",
+              "label": "五年 - 原始值",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "rSquaredToIndRankP_10Y",
+              "label": "十年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "rSquaredToInd_10Y",
+              "label": "十年 - 原始值",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            }
+          ]
+        },
+        {
+          "label": "贝塔",
+          "dp": "betaToInd",
+          "source": "local",
+          "component": "group-switch-range",
+          "comments": "衡量基金收益相对于基准指数收益的总体波动性大小，该指标大于1意味着该基金的波动性大于基准指数的波动性。基准指数默认为晨星分类指定指数",
+          "items": [
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "betaToIndRankP_1Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "betaToInd_1Y"
+                }
+              ],
+              "label": "一年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "betaToIndRankP_3Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "betaToInd_3Y"
+                }
+              ],
+              "label": "三年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "betaToIndRankP_5Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "betaToInd_5Y"
+                }
+              ],
+              "label": "五年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "betaToIndRankP_10Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "betaToInd_10Y"
+                }
+              ],
+              "label": "十年"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "betaToIndRankP_1Y",
+              "label": "一年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "betaToInd_1Y",
+              "label": "一年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "betaToIndRankP_3Y",
+              "label": "三年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "betaToInd_3Y",
+              "label": "三年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "betaToIndRankP_5Y",
+              "label": "五年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "betaToInd_5Y",
+              "label": "五年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "betaToIndRankP_10Y",
+              "label": "十年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "betaToInd_10Y",
+              "label": "十年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "阿尔法",
+          "dp": "alphaToInd",
+          "source": "local",
+          "component": "group-switch-range",
+          "comments": "阿尔法是衡量基金超额收益的指标，越大越好。基准指数默认为晨星分类指定指数",
+          "items": [
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "alphaToIndRankP_1Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "alphaToInd_1Y"
+                }
+              ],
+              "label": "一年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "alphaToIndRankP_3Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "alphaToInd_3Y"
+                }
+              ],
+              "label": "三年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "alphaToIndRankP_5Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "alphaToInd_5Y"
+                }
+              ],
+              "label": "五年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "alphaToIndRankP_10Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "alphaToInd_10Y"
+                }
+              ],
+              "label": "十年"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "alphaToIndRankP_1Y",
+              "label": "一年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "alphaToInd_1Y",
+              "label": "一年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "alphaToIndRankP_3Y",
+              "label": "三年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "alphaToInd_3Y",
+              "label": "三年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "alphaToIndRankP_5Y",
+              "label": "五年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "alphaToInd_5Y",
+              "label": "五年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "alphaToIndRankP_10Y",
+              "label": "十年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "alphaToInd_10Y",
+              "label": "十年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "超额收益",
+          "dp": "excessPb",
+          "source": "local",
+          "component": "group-switch-range",
+          "comments": "指基金收益率与基准收益率的差值，数值越大代表基金跑赢基准的幅度越大。基准默认为基金业绩比较基准。",
+          "items": [
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "excessPb12mRankPer"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "excessPb12mPer"
+                }
+              ],
+              "label": "一年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "excessPb36mRankPer"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "excessPb36mPer"
+                }
+              ],
+              "label": "三年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "excessPb60mRankPer"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "excessPb60mPer"
+                }
+              ],
+              "label": "五年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "excessPb120mRankPer"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "excessPb120mPer"
+                }
+              ],
+              "label": "十年"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "excessPb12mRankPer",
+              "label": "一年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "excessPb12mPer",
+              "label": "一年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "excessPb36mRankPer",
+              "label": "三年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "excessPb36mPer",
+              "label": "三年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "excessPb60mRankPer",
+              "label": "五年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "excessPb60mPer",
+              "label": "五年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "excessPb120mRankPer",
+              "label": "十年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "excessPb120mPer",
+              "label": "十年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "跟踪误差",
+          "dp": "trackPb",
+          "source": "local",
+          "component": "group-switch-range",
+          "comments": "衡量基金跟踪基准紧密程度的指标，通常用超额收益的标准差来计算，数值越小表明基金跟踪基准越紧密。基准默认为基金业绩比较基准。",
+          "items": [
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "trackPb12mRankPer"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "trackPb12mPer"
+                }
+              ],
+              "label": "一年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "trackPb36mRankPer"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "trackPb36mPer"
+                }
+              ],
+              "label": "三年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "trackPb60mRankPer"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "trackPb60mPer"
+                }
+              ],
+              "label": "五年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "trackPb120mRankPer"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "trackPb120mPer"
+                }
+              ],
+              "label": "十年"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "trackPb12mRankPer",
+              "label": "一年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "trackPb12mPer",
+              "label": "一年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "trackPb36mRankPer",
+              "label": "三年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "trackPb36mPer",
+              "label": "三年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "trackPb60mRankPer",
+              "label": "五年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "trackPb60mPer",
+              "label": "五年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "trackPb120mRankPer",
+              "label": "十年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "trackPb120mPer",
+              "label": "十年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "信息比率",
+          "dp": "infoPb",
+          "source": "local",
+          "component": "group-switch-range",
+          "comments": "衡量基金风险调整后收益的指标，反映单位跟踪误差所带来的超额收益，数值越大通常表明基金经理的主动管理能力越强。基准默认为基金业绩比较基准。",
+          "items": [
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "infoPb12mRankPer"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "infoPb12m"
+                }
+              ],
+              "label": "一年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "infoPb36mRankPer"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "infoPb36m"
+                }
+              ],
+              "label": "三年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "infoPb60mRankPer"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "infoPb60m"
+                }
+              ],
+              "label": "五年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "infoPb120mRankPer"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "value": "infoPb120m"
+                }
+              ],
+              "label": "十年"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "infoPb12mRankPer",
+              "label": "一年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "infoPb12m",
+              "label": "一年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "infoPb36mRankPer",
+              "label": "三年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "infoPb36m",
+              "label": "三年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "infoPb60mRankPer",
+              "label": "五年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "infoPb60m",
+              "label": "五年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "infoPb120mRankPer",
+              "label": "十年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "infoPb120m",
+              "label": "十年 - 原始值",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "涨市捕获比",
+          "dp": "upCaptureRatio",
+          "source": "local",
+          "component": "group-switch-range",
+          "comments": "该指标越大，说明基金在牛市把握机会的能力更强，超过100%即为弹性强于市场指数。基准指数默认为晨星分类指定指数",
+          "items": [
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "upCaptureRatioRankP_1Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "upCaptureRatio_1Y"
+                }
+              ],
+              "label": "一年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "upCaptureRatioRankP_3Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "upCaptureRatio_3Y"
+                }
+              ],
+              "label": "三年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "upCaptureRatioRankP_5Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "upCaptureRatio_5Y"
+                }
+              ],
+              "label": "五年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "upCaptureRatioRankP_10Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "upCaptureRatio_10Y"
+                }
+              ],
+              "label": "十年"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "upCaptureRatioRankP_1Y",
+              "label": "一年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "upCaptureRatio_1Y",
+              "label": "一年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "upCaptureRatioRankP_3Y",
+              "label": "三年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "upCaptureRatio_3Y",
+              "label": "三年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "upCaptureRatioRankP_5Y",
+              "label": "五年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "upCaptureRatio_5Y",
+              "label": "五年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "upCaptureRatioRankP_10Y",
+              "label": "十年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "upCaptureRatio_10Y",
+              "label": "十年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "跌市捕获比",
+          "dp": "downCaptureRatio",
+          "source": "local",
+          "component": "group-switch-range",
+          "comments": "该指标越小，说明基金在熊市抗跌能力更强，低于100%即为抗跌能力好于市场指数。基准指数默认为晨星分类指定指数",
+          "items": [
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "downCaptureRatioRankP_1Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "downCaptureRatio_1Y"
+                }
+              ],
+              "label": "一年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "downCaptureRatioRankP_3Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "downCaptureRatio_3Y"
+                }
+              ],
+              "label": "三年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "downCaptureRatioRankP_5Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "downCaptureRatio_5Y"
+                }
+              ],
+              "label": "五年"
+            },
+            {
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "downCaptureRatioRankP_10Y"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "value": "downCaptureRatio_10Y"
+                }
+              ],
+              "label": "十年"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "downCaptureRatioRankP_1Y",
+              "label": "一年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "downCaptureRatio_1Y",
+              "label": "一年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "downCaptureRatioRankP_3Y",
+              "label": "三年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "downCaptureRatio_3Y",
+              "label": "三年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "downCaptureRatioRankP_5Y",
+              "label": "五年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "downCaptureRatio_5Y",
+              "label": "五年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "downCaptureRatioRankP_10Y",
+              "label": "十年 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "downCaptureRatio_10Y",
+              "label": "十年 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "持仓分析",
+      "controls": [
+        {
+          "label": "晨星风格箱",
+          "dp": "styleBox",
+          "source": "all",
+          "component": "style-box",
+          "items": [
+            {
+              "value": "1",
+              "label": "大盘价值"
+            },
+            {
+              "value": "2",
+              "label": "大盘平衡"
+            },
+            {
+              "value": "3",
+              "label": "大盘成长"
+            },
+            {
+              "value": "4",
+              "label": "中盘价值"
+            },
+            {
+              "value": "5",
+              "label": "中盘平衡"
+            },
+            {
+              "value": "6",
+              "label": "中盘成长"
+            },
+            {
+              "value": "7",
+              "label": "小盘价值"
+            },
+            {
+              "value": "8",
+              "label": "小盘平衡"
+            },
+            {
+              "value": "9",
+              "label": "小盘成长"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "styleBox",
+              "label": "晨星风格箱",
+              "valueType": "string-array",
+              "unit": null,
+              "sliderType": null,
+              "values": [
+                {
+                  "label": "大盘价值",
+                  "value": "1"
+                },
+                {
+                  "label": "大盘平衡",
+                  "value": "2"
+                },
+                {
+                  "label": "大盘成长",
+                  "value": "3"
+                },
+                {
+                  "label": "中盘价值",
+                  "value": "4"
+                },
+                {
+                  "label": "中盘平衡",
+                  "value": "5"
+                },
+                {
+                  "label": "中盘成长",
+                  "value": "6"
+                },
+                {
+                  "label": "小盘价值",
+                  "value": "7"
+                },
+                {
+                  "label": "小盘平衡",
+                  "value": "8"
+                },
+                {
+                  "label": "小盘成长",
+                  "value": "9"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "股票换手率",
+          "dp": "turnover_Annu",
+          "source": "all",
+          "component": "range-slider",
+          "unit": "%",
+          "sliderType": "range",
+          "comments": "基金换手率衡量基金经理交易股票的频繁程度，该指标越低代表基金经理越偏向长期持有股票；越高意味着基金经理交易越活跃。国内主动偏股型基金的换手率平均在300%左右",
+          "requestFields": [
+            {
+              "field": "turnover_Annu",
+              "label": "股票换手率",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "前十大股票集中度",
+          "dp": "top10Holding",
+          "source": "all",
+          "component": "range-slider",
+          "requestFields": [
+            {
+              "field": "top10Holding",
+              "label": "前十大股票集中度",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            }
+          ]
+        },
+        {
+          "label": "港股占比",
+          "dp": "hkWeighting",
+          "source": "local",
+          "component": "range-slider",
+          "requestFields": [
+            {
+              "field": "hkWeighting",
+              "label": "港股占比",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            }
+          ]
+        },
+        {
+          "label": "资产配置分布",
+          "dp": "assetAllocation",
+          "source": "local",
+          "component": "group-switch-range",
+          "items": [
+            {
+              "label": "股票占比",
+              "dpList": [
+                {
+                  "label": "不穿透",
+                  "value": "stockAsset"
+                },
+                {
+                  "label": "穿透",
+                  "value": "stockAssetPenetrate"
+                }
+              ]
+            },
+            {
+              "label": "债券占比",
+              "dpList": [
+                {
+                  "label": "不穿透",
+                  "value": "bondAsset"
+                },
+                {
+                  "label": "穿透",
+                  "value": "bondAssetPenetrate"
+                }
+              ]
+            },
+            {
+              "label": "现金占比",
+              "dpList": [
+                {
+                  "label": "不穿透",
+                  "value": "cashAsset"
+                },
+                {
+                  "label": "穿透",
+                  "value": "cashAssetPenetrate"
+                }
+              ]
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "stockAsset",
+              "label": "股票占比 - 不穿透",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "stockAssetPenetrate",
+              "label": "股票占比 - 穿透",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "bondAsset",
+              "label": "债券占比 - 不穿透",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "bondAssetPenetrate",
+              "label": "债券占比 - 穿透",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "cashAsset",
+              "label": "现金占比 - 不穿透",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "cashAssetPenetrate",
+              "label": "现金占比 - 穿透",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            }
+          ]
+        },
+        {
+          "label": "股票行业占比",
+          "dp": "stock",
+          "source": "all",
+          "component": "group-switch-range",
+          "items": [
+            {
+              "label": "基础材料",
+              "dp": "gSSBd_101"
+            },
+            {
+              "label": "可选消费",
+              "dp": "gSSBd_102"
+            },
+            {
+              "label": "金融服务",
+              "dp": "gSSBd_103"
+            },
+            {
+              "label": "房地产",
+              "dp": "gSSBd_104"
+            },
+            {
+              "label": "通信服务",
+              "dp": "gSSBd_308"
+            },
+            {
+              "label": "能源",
+              "dp": "gSSBd_309"
+            },
+            {
+              "label": "工业",
+              "dp": "gSSBd_310"
+            },
+            {
+              "label": "科技",
+              "dp": "gSSBd_311"
+            },
+            {
+              "label": "必选消费",
+              "dp": "gSSBd_205"
+            },
+            {
+              "label": "医疗保健",
+              "dp": "gSSBd_206"
+            },
+            {
+              "label": "公用事业 ",
+              "dp": "gSSBd_207"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "gSSBd_101",
+              "label": "基础材料",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "gSSBd_102",
+              "label": "可选消费",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "gSSBd_103",
+              "label": "金融服务",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "gSSBd_104",
+              "label": "房地产",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "gSSBd_308",
+              "label": "通信服务",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "gSSBd_309",
+              "label": "能源",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "gSSBd_310",
+              "label": "工业",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "gSSBd_311",
+              "label": "科技",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "gSSBd_205",
+              "label": "必选消费",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "gSSBd_206",
+              "label": "医疗保健",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "gSSBd_207",
+              "label": "公用事业 ",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            }
+          ]
+        },
+        {
+          "label": "第一大股票行业权重",
+          "dp": "gSSBd_max",
+          "source": "all",
+          "component": "range-slider",
+          "requestFields": [
+            {
+              "field": "gSSBd_max",
+              "label": "第一大股票行业权重",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            }
+          ]
+        },
+        {
+          "label": "债券券种分布",
+          "dp": "bond",
+          "source": "local",
+          "component": "group-switch-range",
+          "items": [
+            {
+              "label": "国债及地方政府债",
+              "dp": "bBd_1and11"
+            },
+            {
+              "label": "金融债",
+              "dp": "bBd_2"
+            },
+            {
+              "label": "公司债",
+              "tooltip": "企业债、短融及中票",
+              "dp": "bBd_3and8and10"
+            },
+            {
+              "label": "可转债",
+              "dp": "bBd_4"
+            },
+            {
+              "label": "ABS",
+              "dp": "bBd_6"
+            },
+            {
+              "label": "同业存单",
+              "dp": "bBd_12"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "bBd_1and11",
+              "label": "国债及地方政府债",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "bBd_2",
+              "label": "金融债",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "bBd_3and8and10",
+              "label": "公司债",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "bBd_4",
+              "label": "可转债",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "bBd_6",
+              "label": "ABS",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "bBd_12",
+              "label": "同业存单",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "费用",
+      "controls": [
+        {
+          "label": "综合费率",
+          "source": "local",
+          "component": "range-slider",
+          "comments": "基金显性费率和隐性费率之和，大多数基金的综合费率在3%以下",
+          "dpList": [
+            {
+              "label": "排名",
+              "value": "iHCRankPer"
+            },
+            {
+              "label": "原始值",
+              "sliderType": "range",
+              "unit": "%",
+              "step": 0.01,
+              "value": "ihc"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "iHCRankPer",
+              "label": "排名",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "ihc",
+              "label": "原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "显性费率",
+          "dp": "explicitCost",
+          "source": "local",
+          "component": "group-switch-range",
+          "comments": "显性费率即常见的基金管理费、托管费及销售服务费之和。对于债券基金显性费率常见在1%以下，权益基金的显性费率水平多数在2%以下",
+          "items": [
+            {
+              "label": "管理费",
+              "sliderType": "range",
+              "unit": "%",
+              "step": 0.01,
+              "dp": "managementFee"
+            },
+            {
+              "label": "托管费",
+              "sliderType": "range",
+              "unit": "%",
+              "step": 0.01,
+              "dp": "custodianRatio"
+            },
+            {
+              "label": "销售服务费",
+              "sliderType": "range",
+              "unit": "%",
+              "step": 0.01,
+              "dp": "distibutionFee"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "managementFee",
+              "label": "管理费",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "custodianRatio",
+              "label": "托管费",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "distibutionFee",
+              "label": "销售服务费",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "隐性费率",
+          "dp": "hiddenCost",
+          "source": "local",
+          "component": "group-switch-range",
+          "comments": "隐性费率包括基金的交易成本以及其它运营费用的摊销，这部分成本容易被忽视但也会影响基金的收益，一般绝对金额较低，但少数基金隐性成本亦能超过2%",
+          "items": [
+            {
+              "label": "交易成本",
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "tTCRankPer"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "step": 0.01,
+                  "value": "ttc"
+                }
+              ]
+            },
+            {
+              "label": "其它运营成本",
+              "dpList": [
+                {
+                  "label": "排名",
+                  "value": "oOCRankPer"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "%",
+                  "step": 0.01,
+                  "value": "ooc"
+                }
+              ]
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "tTCRankPer",
+              "label": "交易成本 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "ttc",
+              "label": "交易成本 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            },
+            {
+              "field": "oOCRankPer",
+              "label": "其它运营成本 - 排名",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "ooc",
+              "label": "其它运营成本 - 原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "年报运营费率",
+          "source": "local",
+          "component": "range-slider",
+          "comments": "基金最新年报披露的各项运营费率之和",
+          "dpList": [
+            {
+              "label": "排名",
+              "value": "tERRankPer"
+            },
+            {
+              "label": "原始值",
+              "sliderType": "range",
+              "unit": "%",
+              "step": 0.01,
+              "value": "ter"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "tERRankPer",
+              "label": "排名",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "ter",
+              "label": "原始值",
+              "valueType": "range-string",
+              "unit": "%",
+              "sliderType": "range"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "基金公司",
+      "controls": [
+        {
+          "label": "公司名称",
+          "dp": "companyName",
+          "source": "all",
+          "component": "company",
+          "requestFields": [
+            {
+              "field": "companyName",
+              "label": "公司名称",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            }
+          ]
+        },
+        {
+          "label": "管理规模",
+          "dp": "management",
+          "source": "local",
+          "component": "group-switch-range",
+          "items": [
+            {
+              "label": "非货币规模",
+              "dpList": [
+                {
+                  "label": "绝对排名",
+                  "sliderType": "range",
+                  "value": "broadCategorySizeAllExMmRank"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "亿元",
+                  "value": "broadCategorySizeAllExMm"
+                }
+              ]
+            },
+            {
+              "label": "权益",
+              "dpList": [
+                {
+                  "label": "绝对排名",
+                  "sliderType": "range",
+                  "value": "broadCategorySizeEquityRank"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "亿元",
+                  "value": "broadCategorySizeEquity"
+                }
+              ]
+            },
+            {
+              "label": "固收",
+              "dpList": [
+                {
+                  "label": "绝对排名",
+                  "sliderType": "range",
+                  "value": "broadCategorySizeFixIncomeRank"
+                },
+                {
+                  "label": "原始值",
+                  "sliderType": "range",
+                  "unit": "亿元",
+                  "value": "broadCategorySizeFixIncome"
+                }
+              ]
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "broadCategorySizeAllExMmRank",
+              "label": "非货币规模 - 绝对排名",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "broadCategorySizeAllExMm",
+              "label": "非货币规模 - 原始值",
+              "valueType": "range-string",
+              "unit": "亿元",
+              "sliderType": "range"
+            },
+            {
+              "field": "broadCategorySizeEquityRank",
+              "label": "权益 - 绝对排名",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "broadCategorySizeEquity",
+              "label": "权益 - 原始值",
+              "valueType": "range-string",
+              "unit": "亿元",
+              "sliderType": "range"
+            },
+            {
+              "field": "broadCategorySizeFixIncomeRank",
+              "label": "固收 - 绝对排名",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "range"
+            },
+            {
+              "field": "broadCategorySizeFixIncome",
+              "label": "固收 - 原始值",
+              "valueType": "range-string",
+              "unit": "亿元",
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "平均投管经验",
+          "dp": "managerCareerTime",
+          "source": "all",
+          "component": "range-slider",
+          "sliderType": "year",
+          "comments": "基金公司旗下所有在职的基金经理平均管理公募产品的年限",
+          "requestFields": [
+            {
+              "field": "managerCareerTime",
+              "label": "平均投管经验",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "year"
+            }
+          ]
+        },
+        {
+          "label": "平均任职时间",
+          "dp": "managerStayTime",
+          "source": "all",
+          "component": "range-slider",
+          "sliderType": "year",
+          "comments": "基金公司旗下所有在职的基金经理在本公司的任职时长",
+          "requestFields": [
+            {
+              "field": "managerStayTime",
+              "label": "平均任职时间",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "year"
+            }
+          ]
+        },
+        {
+          "label": "留职率",
+          "source": "local",
+          "component": "group-switch-range",
+          "items": [
+            {
+              "dp": "retention1Y",
+              "label": "近一年",
+              "source": "all"
+            },
+            {
+              "dp": "retention3Y",
+              "label": "近三年",
+              "source": "all"
+            },
+            {
+              "dp": "retention5Y",
+              "label": "近五年",
+              "source": "all"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "retention1Y",
+              "label": "近一年",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "retention3Y",
+              "label": "近三年",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "retention5Y",
+              "label": "近五年",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            }
+          ]
+        },
+        {
+          "label": "成功率",
+          "source": "all",
+          "component": "group-switch-range",
+          "comments": "基金公司旗下产品在对应期间维持运作且能位列市场同类前1/2%的比率；该指标长期能超过50%一般代表基金公司的整体产品运作能力越强",
+          "items": [
+            {
+              "dp": "successRatio3Y",
+              "label": "近三年",
+              "source": "all"
+            },
+            {
+              "dp": "successRatio5Y",
+              "label": "近五年",
+              "source": "all"
+            },
+            {
+              "dp": "successRatio10Y",
+              "label": "近十年",
+              "source": "all"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "successRatio3Y",
+              "label": "近三年",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "successRatio5Y",
+              "label": "近五年",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            },
+            {
+              "field": "successRatio10Y",
+              "label": "近十年",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            }
+          ]
+        },
+        {
+          "label": "综合费率排名",
+          "dp": "ttcRankPerByFund",
+          "source": "local",
+          "component": "range-slider",
+          "comments": "基金公司旗下所有产品的加权综合费率在行业的排名",
+          "requestFields": [
+            {
+              "field": "ttcRankPerByFund",
+              "label": "综合费率排名",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            }
+          ]
+        },
+        {
+          "label": "隐性费率排名",
+          "dp": "hiddenCostRankPerByFund",
+          "source": "local",
+          "component": "range-slider",
+          "comments": "基金公司旗下所有产品的加权隐性费率在行业的排名",
+          "requestFields": [
+            {
+              "field": "hiddenCostRankPerByFund",
+              "label": "隐性费率排名",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "基金经理",
+      "controls": [
+        {
+          "label": "投资年限",
+          "dp": "careerYear",
+          "source": "all",
+          "component": "range-slider",
+          "sliderType": "year",
+          "requestFields": [
+            {
+              "field": "careerYear",
+              "label": "投资年限",
+              "valueType": "range-string",
+              "unit": null,
+              "sliderType": "year"
+            }
+          ]
+        },
+        {
+          "label": "管理规模",
+          "dp": "aum",
+          "source": "all",
+          "component": "range-slider",
+          "unit": "亿元",
+          "sliderType": "range",
+          "requestFields": [
+            {
+              "field": "aum",
+              "label": "管理规模",
+              "valueType": "range-string",
+              "unit": "亿元",
+              "sliderType": "range"
+            }
+          ]
+        },
+        {
+          "label": "标签",
+          "dp": "tagging",
+          "source": "local",
+          "component": "checkbox",
+          "items": [
+            {
+              "label": "自购超百万份",
+              "value": "自购超百万份"
+            },
+            {
+              "label": "FOF持有",
+              "value": "FOF持有"
+            },
+            {
+              "label": "晨星奖",
+              "value": "晨星奖"
+            },
+            {
+              "label": "晨星奖提名",
+              "value": "晨星奖提名"
+            }
+          ],
+          "requestFields": [
+            {
+              "field": "tagging",
+              "label": "标签",
+              "valueType": "string-array",
+              "unit": null,
+              "sliderType": null,
+              "values": [
+                {
+                  "label": "自购超百万份",
+                  "value": "自购超百万份"
+                },
+                {
+                  "label": "FOF持有",
+                  "value": "FOF持有"
+                },
+                {
+                  "label": "晨星奖",
+                  "value": "晨星奖"
+                },
+                {
+                  "label": "晨星奖提名",
+                  "value": "晨星奖提名"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "关键字",
+      "controls": [
+        {
+          "label": "关键字",
+          "dp": "fundName",
+          "source": "all",
+          "component": "keywords",
+          "requestFields": [
+            {
+              "field": "fundName",
+              "label": "关键字",
+              "valueType": "string",
+              "unit": null,
+              "sliderType": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "requestFields": [
+    {
+      "field": "ifOpen",
+      "labels": [
+        "基本信息 / 基金组别 / 开放式"
+      ],
+      "valueType": "boolean-string",
+      "unit": null,
+      "examples": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "field": "ifClose",
+      "labels": [
+        "基本信息 / 基金组别 / 封闭式"
+      ],
+      "valueType": "boolean-string",
+      "unit": null,
+      "examples": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "field": "qDII",
+      "labels": [
+        "基本信息 / 基金组别 / QDII"
+      ],
+      "valueType": "boolean-string",
+      "unit": null,
+      "examples": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "field": "exchangeTradedShare",
+      "labels": [
+        "基本信息 / 基金组别 / ETF"
+      ],
+      "valueType": "boolean-string",
+      "unit": null,
+      "examples": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "field": "personalPension",
+      "labels": [
+        "基本信息 / 基金组别 / 个人养老金"
+      ],
+      "valueType": "boolean-string",
+      "unit": null,
+      "examples": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "field": "mRF",
+      "labels": [
+        "基本信息 / 基金组别 / 北上基金"
+      ],
+      "valueType": "boolean-string",
+      "unit": null,
+      "examples": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "field": "masterFeeder",
+      "labels": [
+        "基本信息 / 基金组别 / 联接基金"
+      ],
+      "valueType": "boolean-string",
+      "unit": null,
+      "examples": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "field": "broadCategoryId",
+      "labels": [
+        "基本信息 / 资产大类 / 资产大类"
+      ],
+      "valueType": "string-array",
+      "unit": null,
+      "examples": [
+        {
+          "label": "股票型",
+          "value": "$BCG$EQUTY"
+        },
+        {
+          "label": "混合型",
+          "value": "$BCG$ALLOC"
+        },
+        {
+          "label": "可转债",
+          "value": "$BCG$CONVT,$BCG$HYBSC"
+        },
+        {
+          "label": "债券型",
+          "value": "$BCG$FXINC"
+        },
+        {
+          "label": "货币型",
+          "value": "$BCG$MNMKT,$BCG$CAPPR"
+        },
+        {
+          "label": "另类",
+          "value": "$BCG$ALTER"
+        },
+        {
+          "label": "商品",
+          "value": "$BCG$COMMO,$BCG$REALA"
+        },
+        {
+          "label": "其它",
+          "value": "$BCG$MISCL"
+        }
+      ]
+    },
+    {
+      "field": "categoryId",
+      "labels": [
+        "基本信息 / 晨星分类 / 晨星分类"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": [
+        {
+          "label": "大盘成长股票",
+          "value": "CHCA000051",
+          "group": "股票型"
+        },
+        {
+          "label": "大盘平衡股票",
+          "value": "PGSZ01TTTT",
+          "group": "股票型"
+        },
+        {
+          "label": "大盘价值股票",
+          "value": "CHCA000052",
+          "group": "股票型"
+        },
+        {
+          "label": "中盘成长股票",
+          "value": "CHCA000053",
+          "group": "股票型"
+        },
+        {
+          "label": "中盘平衡股票",
+          "value": "CHCA000054",
+          "group": "股票型"
+        },
+        {
+          "label": "香港股票",
+          "value": "CHCA000037",
+          "group": "股票型"
+        },
+        {
+          "label": "沪港深股票",
+          "value": "CHCA000033",
+          "group": "股票型"
+        },
+        {
+          "label": "行业股票-医药",
+          "value": "CHCA000034",
+          "group": "股票型"
+        },
+        {
+          "label": "行业股票-科技、传媒及通讯",
+          "value": "CHCA000035",
+          "group": "股票型"
+        },
+        {
+          "label": "行业股票 - 消费",
+          "value": "CHCA000039",
+          "group": "股票型"
+        },
+        {
+          "label": "行业股票 - 金融地产",
+          "value": "CHCA000038",
+          "group": "股票型"
+        },
+        {
+          "label": "行业股票 - 其它",
+          "value": "CHCA000047",
+          "group": "股票型"
+        },
+        {
+          "label": "积极配置 - 大盘成长",
+          "value": "CHCA000055",
+          "group": "混合型"
+        },
+        {
+          "label": "积极配置 - 大盘平衡",
+          "value": "PGSZB4TTTT",
+          "group": "混合型"
+        },
+        {
+          "label": "积极配置 - 中小盘",
+          "value": "CHCA000056",
+          "group": "混合型"
+        },
+        {
+          "label": "标准混合",
+          "value": "PGSZA3TTTT",
+          "group": "混合型"
+        },
+        {
+          "label": "保守混合",
+          "value": "PGSZB3TTTT",
+          "group": "混合型"
+        },
+        {
+          "label": "灵活配置",
+          "value": "CHCA000032",
+          "group": "混合型"
+        },
+        {
+          "label": "港股积极配置",
+          "value": "CHCA000050",
+          "group": "混合型"
+        },
+        {
+          "label": "沪港深积极配置",
+          "value": "CHCA000043",
+          "group": "混合型"
+        },
+        {
+          "label": "沪港深保守混合",
+          "value": "CHCA000044",
+          "group": "混合型"
+        },
+        {
+          "label": "沪港深灵活配置",
+          "value": "CHCA000036",
+          "group": "混合型"
+        },
+        {
+          "label": "行业混合 - 医药",
+          "value": "CHCA000041",
+          "group": "混合型"
+        },
+        {
+          "label": "行业混合 - 科技、传媒及通讯",
+          "value": "CHCA000042",
+          "group": "混合型"
+        },
+        {
+          "label": "行业混合 - 消费",
+          "value": "CHCA000040",
+          "group": "混合型"
+        },
+        {
+          "label": "目标日期",
+          "value": "CHCA000045",
+          "group": "混合型"
+        },
+        {
+          "label": "基础设施REITs",
+          "value": "CHCA000057",
+          "group": "混合型"
+        },
+        {
+          "label": "可转债",
+          "value": "CHCA000024",
+          "group": "可转债"
+        },
+        {
+          "label": "积极债券",
+          "value": "PGSZB5TTTT",
+          "group": "债券型"
+        },
+        {
+          "label": "普通债券",
+          "value": "PGSZA2TTTT",
+          "group": "债券型"
+        },
+        {
+          "label": "纯债",
+          "value": "CHCA000023",
+          "group": "债券型"
+        },
+        {
+          "label": "利率债",
+          "value": "CHCA000048",
+          "group": "债券型"
+        },
+        {
+          "label": "信用债",
+          "value": "CHCA000049",
+          "group": "债券型"
+        },
+        {
+          "label": "短债",
+          "value": "PGSZB2TTTT",
+          "group": "债券型"
+        },
+        {
+          "label": "货币市场",
+          "value": "PGSZ04TTTT",
+          "group": "货币型"
+        },
+        {
+          "label": "市场中性策略",
+          "value": "CHCA000025",
+          "group": "另类"
+        },
+        {
+          "label": "商品 - 贵金属",
+          "value": "CHCA000046",
+          "group": "商品"
+        },
+        {
+          "label": "商品 - 其它",
+          "value": "CHCA000026",
+          "group": "商品"
+        },
+        {
+          "label": "其它",
+          "value": "CHCA000020",
+          "group": "QDII及其它"
+        },
+        {
+          "label": "QDII亚太区不包括日本股票",
+          "value": "CHCA000002",
+          "group": "QDII及其它"
+        },
+        {
+          "label": "QDII 大中华区股票",
+          "value": "CHCA000009",
+          "group": "QDII及其它"
+        },
+        {
+          "label": "QDII 新兴市场股票",
+          "value": "CHCA000005",
+          "group": "QDII及其它"
+        },
+        {
+          "label": "QDII环球股票",
+          "value": "CHCA000006",
+          "group": "QDII及其它"
+        },
+        {
+          "label": "QDII美国股票",
+          "value": "CHCA000014",
+          "group": "QDII及其它"
+        },
+        {
+          "label": "QDII行业股票",
+          "value": "CHCA000011",
+          "group": "QDII及其它"
+        },
+        {
+          "label": "QDII 环球股债混合",
+          "value": "CHCA000016",
+          "group": "QDII及其它"
+        },
+        {
+          "label": "QDII全球新兴市场股债混合",
+          "value": "CHCA000030",
+          "group": "QDII及其它"
+        },
+        {
+          "label": "QDII 亚洲股债混合",
+          "value": "CHCA000029",
+          "group": "QDII及其它"
+        },
+        {
+          "label": "QDII大中华区股债混合",
+          "value": "CHCA000031",
+          "group": "QDII及其它"
+        },
+        {
+          "label": "QDII环球债券",
+          "value": "CHCA000021",
+          "group": "QDII及其它"
+        },
+        {
+          "label": "QDII商品",
+          "value": "CHCA000022",
+          "group": "QDII及其它"
+        },
+        {
+          "label": "QDII其它",
+          "value": "CHCA000028",
+          "group": "QDII及其它"
+        }
+      ]
+    },
+    {
+      "field": "totalRisk",
+      "labels": [
+        "基本信息 / 风险等级 / 风险等级"
+      ],
+      "valueType": "string-array",
+      "unit": null,
+      "examples": [
+        {
+          "label": "低风险(R1)",
+          "value": "1"
+        },
+        {
+          "label": "中低风险(R2)",
+          "value": "2"
+        },
+        {
+          "label": "中风险(R3)",
+          "value": "3"
+        },
+        {
+          "label": "中高风险(R4)",
+          "value": "4"
+        },
+        {
+          "label": "高风险(R5)",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "field": "inceptionDate",
+      "labels": [
+        "基本信息 / 成立时间 / 成立时间"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": [
+        {
+          "label": "1年以上",
+          "value": ">1"
+        },
+        {
+          "label": "3年以上",
+          "value": ">3"
+        },
+        {
+          "label": "大于5年",
+          "value": ">5"
+        },
+        {
+          "label": "大于7年",
+          "value": ">7"
+        },
+        {
+          "label": "大于10年",
+          "value": ">10"
+        },
+        {
+          "label": "自定义",
+          "value": "custom"
+        }
+      ]
+    },
+    {
+      "field": "fundSize",
+      "labels": [
+        "基本信息 / 基金规模 / 基金规模"
+      ],
+      "valueType": "string-array",
+      "unit": null,
+      "examples": [
+        {
+          "label": "0~1亿",
+          "value": "0~1"
+        },
+        {
+          "label": "1~5亿",
+          "value": "1~5"
+        },
+        {
+          "label": "5~10亿",
+          "value": "5~10"
+        },
+        {
+          "label": "10~50亿",
+          "value": "10~50"
+        },
+        {
+          "label": "50~100亿",
+          "value": "50~100"
+        },
+        {
+          "label": "大于100亿",
+          "value": ">100"
+        },
+        {
+          "label": "自定义",
+          "value": "custom"
+        }
+      ]
+    },
+    {
+      "field": "shareclassTNA",
+      "labels": [
+        "基本信息 / 份额规模 / 份额规模"
+      ],
+      "valueType": "string-array",
+      "unit": null,
+      "examples": [
+        {
+          "label": "0~1亿",
+          "value": "0~1"
+        },
+        {
+          "label": "1~5亿",
+          "value": "1~5"
+        },
+        {
+          "label": "5~10亿",
+          "value": "5~10"
+        },
+        {
+          "label": "10~50亿",
+          "value": "10~50"
+        },
+        {
+          "label": "50~100亿",
+          "value": "50~100"
+        },
+        {
+          "label": "大于100亿",
+          "value": ">100"
+        },
+        {
+          "label": "自定义",
+          "value": "custom"
+        }
+      ]
+    },
+    {
+      "field": "longestTenure",
+      "labels": [
+        "基本信息 / 最长任职时间 / 最长任职时间"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "institutionalInvestorsSharesPercentage",
+      "labels": [
+        "基本信息 / 持有人结构 / 机构占比"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "individualInvestorsSharesPercentage",
+      "labels": [
+        "基本信息 / 持有人结构 / 个人占比"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "managerOwnership10kshares",
+      "labels": [
+        "基本信息 / 持有人结构 / 基金经理持有份额（万份）"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "subscription",
+      "labels": [
+        "基本信息 / 申购状态 / 申购状态"
+      ],
+      "valueType": "string-array",
+      "unit": null,
+      "examples": [
+        {
+          "label": "不可申购",
+          "value": "不可申购"
+        },
+        {
+          "label": "可申购",
+          "value": "可申购"
+        },
+        {
+          "label": "封闭期",
+          "value": "封闭期"
+        },
+        {
+          "label": "限大额",
+          "value": "限大额"
+        }
+      ]
+    },
+    {
+      "field": "applyingMaxIv",
+      "labels": [
+        "基本信息 / 申购限制 / 申购限制"
+      ],
+      "valueType": "string-array",
+      "unit": null,
+      "examples": [
+        {
+          "label": "无",
+          "value": "null"
+        },
+        {
+          "label": "小于100",
+          "value": "<100"
+        },
+        {
+          "label": "100-1000",
+          "value": "100~1000"
+        },
+        {
+          "label": "1000-10000",
+          "value": "1000~10000"
+        },
+        {
+          "label": "大于10000",
+          "value": ">10000"
+        },
+        {
+          "label": "自定义",
+          "value": "custom"
+        }
+      ]
+    },
+    {
+      "field": "closeOpenPeriod",
+      "labels": [
+        "基本信息 / 锁定期 / 锁定期"
+      ],
+      "valueType": "string-array",
+      "unit": null,
+      "examples": [
+        {
+          "label": "无",
+          "value": "null"
+        },
+        {
+          "label": "小于1年",
+          "value": "<1"
+        },
+        {
+          "label": "1-3年",
+          "value": "1~3"
+        },
+        {
+          "label": "3-5年",
+          "value": "3~5"
+        },
+        {
+          "label": "大于5年",
+          "value": ">5"
+        },
+        {
+          "label": "自定义",
+          "value": "custom"
+        }
+      ]
+    },
+    {
+      "field": "srDate",
+      "labels": [
+        "基本信息 / 重要属性 / 转型"
+      ],
+      "valueType": "boolean-string",
+      "unit": null,
+      "examples": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "field": "indexFund",
+      "labels": [
+        "基本信息 / 重要属性 / 指数"
+      ],
+      "valueType": "boolean-string",
+      "unit": null,
+      "examples": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "field": "enhancedIndexFund",
+      "labels": [
+        "基本信息 / 重要属性 / 指数增强"
+      ],
+      "valueType": "boolean-string",
+      "unit": null,
+      "examples": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "field": "fundOfFunds",
+      "labels": [
+        "基本信息 / 重要属性 / FOF"
+      ],
+      "valueType": "boolean-string",
+      "unit": null,
+      "examples": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "field": "oldestShareId",
+      "labels": [
+        "基本信息 / 重要属性 / 基本份额"
+      ],
+      "valueType": "boolean-string",
+      "unit": null,
+      "examples": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "field": "rating3Y",
+      "labels": [
+        "业绩指标 / 晨星评级 / 三年"
+      ],
+      "valueType": "string-array",
+      "unit": null,
+      "examples": [
+        {
+          "label": "5",
+          "value": "5"
+        },
+        {
+          "label": "4",
+          "value": "4"
+        },
+        {
+          "label": "3",
+          "value": "3"
+        },
+        {
+          "label": "2",
+          "value": "2"
+        },
+        {
+          "label": "1",
+          "value": "1"
+        },
+        {
+          "label": "无",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "field": "rating5Y",
+      "labels": [
+        "业绩指标 / 晨星评级 / 五年"
+      ],
+      "valueType": "string-array",
+      "unit": null,
+      "examples": [
+        {
+          "label": "5",
+          "value": "5"
+        },
+        {
+          "label": "4",
+          "value": "4"
+        },
+        {
+          "label": "3",
+          "value": "3"
+        },
+        {
+          "label": "2",
+          "value": "2"
+        },
+        {
+          "label": "1",
+          "value": "1"
+        },
+        {
+          "label": "无",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "field": "rating10Y",
+      "labels": [
+        "业绩指标 / 晨星评级 / 十年"
+      ],
+      "valueType": "string-array",
+      "unit": null,
+      "examples": [
+        {
+          "label": "5",
+          "value": "5"
+        },
+        {
+          "label": "4",
+          "value": "4"
+        },
+        {
+          "label": "3",
+          "value": "3"
+        },
+        {
+          "label": "2",
+          "value": "2"
+        },
+        {
+          "label": "1",
+          "value": "1"
+        },
+        {
+          "label": "无",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "field": "riskRating3Y",
+      "labels": [
+        "业绩指标 / 晨星风险评级 / 三年"
+      ],
+      "valueType": "string-array",
+      "unit": null,
+      "examples": [
+        {
+          "label": "高",
+          "value": "5"
+        },
+        {
+          "label": "中高",
+          "value": "4"
+        },
+        {
+          "label": "中",
+          "value": "3"
+        },
+        {
+          "label": "中低",
+          "value": "2"
+        },
+        {
+          "label": "低",
+          "value": "1"
+        },
+        {
+          "label": "无",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "field": "riskRating5Y",
+      "labels": [
+        "业绩指标 / 晨星风险评级 / 五年"
+      ],
+      "valueType": "string-array",
+      "unit": null,
+      "examples": [
+        {
+          "label": "高",
+          "value": "5"
+        },
+        {
+          "label": "中高",
+          "value": "4"
+        },
+        {
+          "label": "中",
+          "value": "3"
+        },
+        {
+          "label": "中低",
+          "value": "2"
+        },
+        {
+          "label": "低",
+          "value": "1"
+        },
+        {
+          "label": "无",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "field": "riskRating10Y",
+      "labels": [
+        "业绩指标 / 晨星风险评级 / 十年"
+      ],
+      "valueType": "string-array",
+      "unit": null,
+      "examples": [
+        {
+          "label": "高",
+          "value": "5"
+        },
+        {
+          "label": "中高",
+          "value": "4"
+        },
+        {
+          "label": "中",
+          "value": "3"
+        },
+        {
+          "label": "中低",
+          "value": "2"
+        },
+        {
+          "label": "低",
+          "value": "1"
+        },
+        {
+          "label": "无",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "field": "returnYTD_M",
+      "labels": [
+        "业绩指标 / 基金回报(月末) / 今年以来"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "return1Month_M",
+      "labels": [
+        "业绩指标 / 基金回报(月末) / 1个月"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "return3Month_M",
+      "labels": [
+        "业绩指标 / 基金回报(月末) / 3个月"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "return6Month_M",
+      "labels": [
+        "业绩指标 / 基金回报(月末) / 6个月"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "return1Year_M",
+      "labels": [
+        "业绩指标 / 基金回报(月末) / 一年"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "accReturn3Year_M",
+      "labels": [
+        "业绩指标 / 基金回报(月末) / 三年 - 累计"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "return3Year_M",
+      "labels": [
+        "业绩指标 / 基金回报(月末) / 三年 - 年化"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "accReturn5Year_M",
+      "labels": [
+        "业绩指标 / 基金回报(月末) / 五年 - 累计"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "return5Year_M",
+      "labels": [
+        "业绩指标 / 基金回报(月末) / 五年 - 年化"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "accReturn7Year_M",
+      "labels": [
+        "业绩指标 / 基金回报(月末) / 七年 - 累计"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "return7Year_M",
+      "labels": [
+        "业绩指标 / 基金回报(月末) / 七年 - 年化"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "accReturn10Year_M",
+      "labels": [
+        "业绩指标 / 基金回报(月末) / 十年 - 累计"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "return10Year_M",
+      "labels": [
+        "业绩指标 / 基金回报(月末) / 十年 - 年化"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "return1MonthRankP_M",
+      "labels": [
+        "业绩指标 / 基金排名(月末) / 1个月"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "return3MonthRankP_M",
+      "labels": [
+        "业绩指标 / 基金排名(月末) / 3个月"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "return6MonthRankP_M",
+      "labels": [
+        "业绩指标 / 基金排名(月末) / 6个月"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "return1YearRankP_M",
+      "labels": [
+        "业绩指标 / 基金排名(月末) / 一年"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "return3YearRankP_M",
+      "labels": [
+        "业绩指标 / 基金排名(月末) / 三年"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "return5YearRankP_M",
+      "labels": [
+        "业绩指标 / 基金排名(月末) / 五年"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "return7YearRankP_M",
+      "labels": [
+        "业绩指标 / 基金排名(月末) / 七年"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "return10YearRankP_M",
+      "labels": [
+        "业绩指标 / 基金排名(月末) / 十年"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sharpeRatioRankP_1Y",
+      "labels": [
+        "业绩指标 / 夏普比率(月末) / 一年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sharpeRatio_1Y",
+      "labels": [
+        "业绩指标 / 夏普比率(月末) / 一年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sharpeRatioRankP_3Y",
+      "labels": [
+        "业绩指标 / 夏普比率(月末) / 三年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sharpeRatio_3Y",
+      "labels": [
+        "业绩指标 / 夏普比率(月末) / 三年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sharpeRatioRankP_5Y",
+      "labels": [
+        "业绩指标 / 夏普比率(月末) / 五年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sharpeRatio_5Y",
+      "labels": [
+        "业绩指标 / 夏普比率(月末) / 五年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sharpeRatioRankP_10Y",
+      "labels": [
+        "业绩指标 / 夏普比率(月末) / 十年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sharpeRatio_10Y",
+      "labels": [
+        "业绩指标 / 夏普比率(月末) / 十年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "maximumDrawdownRankP_1Y",
+      "labels": [
+        "业绩指标 / 最大回撤(月末) / 一年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "maximumDrawdown_1Y",
+      "labels": [
+        "业绩指标 / 最大回撤(月末) / 一年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "maximumDrawdownRankP_3Y",
+      "labels": [
+        "业绩指标 / 最大回撤(月末) / 三年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "maximumDrawdown_3Y",
+      "labels": [
+        "业绩指标 / 最大回撤(月末) / 三年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "maximumDrawdownRankP_5Y",
+      "labels": [
+        "业绩指标 / 最大回撤(月末) / 五年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "maximumDrawdown_5Y",
+      "labels": [
+        "业绩指标 / 最大回撤(月末) / 五年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "maximumDrawdownRankP_10Y",
+      "labels": [
+        "业绩指标 / 最大回撤(月末) / 十年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "maximumDrawdown_10Y",
+      "labels": [
+        "业绩指标 / 最大回撤(月末) / 十年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "sTDRankP_1Y",
+      "labels": [
+        "业绩指标 / 标准差 / 一年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sTD_1Y",
+      "labels": [
+        "业绩指标 / 标准差 / 一年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "sTDRankP_3Y",
+      "labels": [
+        "业绩指标 / 标准差 / 三年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sTD_3Y",
+      "labels": [
+        "业绩指标 / 标准差 / 三年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "sTDRankP_5Y",
+      "labels": [
+        "业绩指标 / 标准差 / 五年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sTD_5Y",
+      "labels": [
+        "业绩指标 / 标准差 / 五年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "sTDRankP_10Y",
+      "labels": [
+        "业绩指标 / 标准差 / 十年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sTD_10Y",
+      "labels": [
+        "业绩指标 / 标准差 / 十年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "gamaRatioRankP_1Y",
+      "labels": [
+        "业绩指标 / 卡玛比率 / 一年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gamaRatio_1Y",
+      "labels": [
+        "业绩指标 / 卡玛比率 / 一年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gamaRatioRankP_3Y",
+      "labels": [
+        "业绩指标 / 卡玛比率 / 三年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gamaRatio_3Y",
+      "labels": [
+        "业绩指标 / 卡玛比率 / 三年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gamaRatioRankP_5Y",
+      "labels": [
+        "业绩指标 / 卡玛比率 / 五年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gamaRatio_5Y",
+      "labels": [
+        "业绩指标 / 卡玛比率 / 五年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gamaRatioRankP_10Y",
+      "labels": [
+        "业绩指标 / 卡玛比率 / 十年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gamaRatio_10Y",
+      "labels": [
+        "业绩指标 / 卡玛比率 / 十年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sortinoRatioRankP_1Y",
+      "labels": [
+        "业绩指标 / 索提诺比率 / 一年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sortinoRatio_1Y",
+      "labels": [
+        "业绩指标 / 索提诺比率 / 一年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sortinoRatioRankP_3Y",
+      "labels": [
+        "业绩指标 / 索提诺比率 / 三年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sortinoRatio_3Y",
+      "labels": [
+        "业绩指标 / 索提诺比率 / 三年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sortinoRatioRankP_5Y",
+      "labels": [
+        "业绩指标 / 索提诺比率 / 五年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sortinoRatio_5Y",
+      "labels": [
+        "业绩指标 / 索提诺比率 / 五年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sortinoRatioRankP_10Y",
+      "labels": [
+        "业绩指标 / 索提诺比率 / 十年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "sortinoRatio_10Y",
+      "labels": [
+        "业绩指标 / 索提诺比率 / 十年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "rSquaredToIndRankP_1Y",
+      "labels": [
+        "业绩指标 / R平方 / 一年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "rSquaredToInd_1Y",
+      "labels": [
+        "业绩指标 / R平方 / 一年 - 原始值"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "rSquaredToIndRankP_3Y",
+      "labels": [
+        "业绩指标 / R平方 / 三年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "rSquaredToInd_3Y",
+      "labels": [
+        "业绩指标 / R平方 / 三年 - 原始值"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "rSquaredToIndRankP_5Y",
+      "labels": [
+        "业绩指标 / R平方 / 五年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "rSquaredToInd_5Y",
+      "labels": [
+        "业绩指标 / R平方 / 五年 - 原始值"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "rSquaredToIndRankP_10Y",
+      "labels": [
+        "业绩指标 / R平方 / 十年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "rSquaredToInd_10Y",
+      "labels": [
+        "业绩指标 / R平方 / 十年 - 原始值"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "betaToIndRankP_1Y",
+      "labels": [
+        "业绩指标 / 贝塔 / 一年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "betaToInd_1Y",
+      "labels": [
+        "业绩指标 / 贝塔 / 一年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "betaToIndRankP_3Y",
+      "labels": [
+        "业绩指标 / 贝塔 / 三年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "betaToInd_3Y",
+      "labels": [
+        "业绩指标 / 贝塔 / 三年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "betaToIndRankP_5Y",
+      "labels": [
+        "业绩指标 / 贝塔 / 五年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "betaToInd_5Y",
+      "labels": [
+        "业绩指标 / 贝塔 / 五年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "betaToIndRankP_10Y",
+      "labels": [
+        "业绩指标 / 贝塔 / 十年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "betaToInd_10Y",
+      "labels": [
+        "业绩指标 / 贝塔 / 十年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "alphaToIndRankP_1Y",
+      "labels": [
+        "业绩指标 / 阿尔法 / 一年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "alphaToInd_1Y",
+      "labels": [
+        "业绩指标 / 阿尔法 / 一年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "alphaToIndRankP_3Y",
+      "labels": [
+        "业绩指标 / 阿尔法 / 三年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "alphaToInd_3Y",
+      "labels": [
+        "业绩指标 / 阿尔法 / 三年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "alphaToIndRankP_5Y",
+      "labels": [
+        "业绩指标 / 阿尔法 / 五年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "alphaToInd_5Y",
+      "labels": [
+        "业绩指标 / 阿尔法 / 五年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "alphaToIndRankP_10Y",
+      "labels": [
+        "业绩指标 / 阿尔法 / 十年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "alphaToInd_10Y",
+      "labels": [
+        "业绩指标 / 阿尔法 / 十年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "excessPb12mRankPer",
+      "labels": [
+        "业绩指标 / 超额收益 / 一年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "excessPb12mPer",
+      "labels": [
+        "业绩指标 / 超额收益 / 一年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "excessPb36mRankPer",
+      "labels": [
+        "业绩指标 / 超额收益 / 三年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "excessPb36mPer",
+      "labels": [
+        "业绩指标 / 超额收益 / 三年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "excessPb60mRankPer",
+      "labels": [
+        "业绩指标 / 超额收益 / 五年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "excessPb60mPer",
+      "labels": [
+        "业绩指标 / 超额收益 / 五年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "excessPb120mRankPer",
+      "labels": [
+        "业绩指标 / 超额收益 / 十年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "excessPb120mPer",
+      "labels": [
+        "业绩指标 / 超额收益 / 十年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "trackPb12mRankPer",
+      "labels": [
+        "业绩指标 / 跟踪误差 / 一年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "trackPb12mPer",
+      "labels": [
+        "业绩指标 / 跟踪误差 / 一年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "trackPb36mRankPer",
+      "labels": [
+        "业绩指标 / 跟踪误差 / 三年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "trackPb36mPer",
+      "labels": [
+        "业绩指标 / 跟踪误差 / 三年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "trackPb60mRankPer",
+      "labels": [
+        "业绩指标 / 跟踪误差 / 五年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "trackPb60mPer",
+      "labels": [
+        "业绩指标 / 跟踪误差 / 五年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "trackPb120mRankPer",
+      "labels": [
+        "业绩指标 / 跟踪误差 / 十年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "trackPb120mPer",
+      "labels": [
+        "业绩指标 / 跟踪误差 / 十年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "infoPb12mRankPer",
+      "labels": [
+        "业绩指标 / 信息比率 / 一年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "infoPb12m",
+      "labels": [
+        "业绩指标 / 信息比率 / 一年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "infoPb36mRankPer",
+      "labels": [
+        "业绩指标 / 信息比率 / 三年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "infoPb36m",
+      "labels": [
+        "业绩指标 / 信息比率 / 三年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "infoPb60mRankPer",
+      "labels": [
+        "业绩指标 / 信息比率 / 五年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "infoPb60m",
+      "labels": [
+        "业绩指标 / 信息比率 / 五年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "infoPb120mRankPer",
+      "labels": [
+        "业绩指标 / 信息比率 / 十年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "infoPb120m",
+      "labels": [
+        "业绩指标 / 信息比率 / 十年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "upCaptureRatioRankP_1Y",
+      "labels": [
+        "业绩指标 / 涨市捕获比 / 一年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "upCaptureRatio_1Y",
+      "labels": [
+        "业绩指标 / 涨市捕获比 / 一年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "upCaptureRatioRankP_3Y",
+      "labels": [
+        "业绩指标 / 涨市捕获比 / 三年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "upCaptureRatio_3Y",
+      "labels": [
+        "业绩指标 / 涨市捕获比 / 三年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "upCaptureRatioRankP_5Y",
+      "labels": [
+        "业绩指标 / 涨市捕获比 / 五年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "upCaptureRatio_5Y",
+      "labels": [
+        "业绩指标 / 涨市捕获比 / 五年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "upCaptureRatioRankP_10Y",
+      "labels": [
+        "业绩指标 / 涨市捕获比 / 十年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "upCaptureRatio_10Y",
+      "labels": [
+        "业绩指标 / 涨市捕获比 / 十年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "downCaptureRatioRankP_1Y",
+      "labels": [
+        "业绩指标 / 跌市捕获比 / 一年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "downCaptureRatio_1Y",
+      "labels": [
+        "业绩指标 / 跌市捕获比 / 一年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "downCaptureRatioRankP_3Y",
+      "labels": [
+        "业绩指标 / 跌市捕获比 / 三年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "downCaptureRatio_3Y",
+      "labels": [
+        "业绩指标 / 跌市捕获比 / 三年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "downCaptureRatioRankP_5Y",
+      "labels": [
+        "业绩指标 / 跌市捕获比 / 五年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "downCaptureRatio_5Y",
+      "labels": [
+        "业绩指标 / 跌市捕获比 / 五年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "downCaptureRatioRankP_10Y",
+      "labels": [
+        "业绩指标 / 跌市捕获比 / 十年 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "downCaptureRatio_10Y",
+      "labels": [
+        "业绩指标 / 跌市捕获比 / 十年 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "styleBox",
+      "labels": [
+        "持仓分析 / 晨星风格箱 / 晨星风格箱"
+      ],
+      "valueType": "string-array",
+      "unit": null,
+      "examples": [
+        {
+          "label": "大盘价值",
+          "value": "1"
+        },
+        {
+          "label": "大盘平衡",
+          "value": "2"
+        },
+        {
+          "label": "大盘成长",
+          "value": "3"
+        },
+        {
+          "label": "中盘价值",
+          "value": "4"
+        },
+        {
+          "label": "中盘平衡",
+          "value": "5"
+        },
+        {
+          "label": "中盘成长",
+          "value": "6"
+        },
+        {
+          "label": "小盘价值",
+          "value": "7"
+        },
+        {
+          "label": "小盘平衡",
+          "value": "8"
+        },
+        {
+          "label": "小盘成长",
+          "value": "9"
+        }
+      ]
+    },
+    {
+      "field": "turnover_Annu",
+      "labels": [
+        "持仓分析 / 股票换手率 / 股票换手率"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "top10Holding",
+      "labels": [
+        "持仓分析 / 前十大股票集中度 / 前十大股票集中度"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "hkWeighting",
+      "labels": [
+        "持仓分析 / 港股占比 / 港股占比"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "stockAsset",
+      "labels": [
+        "持仓分析 / 资产配置分布 / 股票占比 - 不穿透"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "stockAssetPenetrate",
+      "labels": [
+        "持仓分析 / 资产配置分布 / 股票占比 - 穿透"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "bondAsset",
+      "labels": [
+        "持仓分析 / 资产配置分布 / 债券占比 - 不穿透"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "bondAssetPenetrate",
+      "labels": [
+        "持仓分析 / 资产配置分布 / 债券占比 - 穿透"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "cashAsset",
+      "labels": [
+        "持仓分析 / 资产配置分布 / 现金占比 - 不穿透"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "cashAssetPenetrate",
+      "labels": [
+        "持仓分析 / 资产配置分布 / 现金占比 - 穿透"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gSSBd_101",
+      "labels": [
+        "持仓分析 / 股票行业占比 / 基础材料"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gSSBd_102",
+      "labels": [
+        "持仓分析 / 股票行业占比 / 可选消费"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gSSBd_103",
+      "labels": [
+        "持仓分析 / 股票行业占比 / 金融服务"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gSSBd_104",
+      "labels": [
+        "持仓分析 / 股票行业占比 / 房地产"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gSSBd_308",
+      "labels": [
+        "持仓分析 / 股票行业占比 / 通信服务"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gSSBd_309",
+      "labels": [
+        "持仓分析 / 股票行业占比 / 能源"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gSSBd_310",
+      "labels": [
+        "持仓分析 / 股票行业占比 / 工业"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gSSBd_311",
+      "labels": [
+        "持仓分析 / 股票行业占比 / 科技"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gSSBd_205",
+      "labels": [
+        "持仓分析 / 股票行业占比 / 必选消费"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gSSBd_206",
+      "labels": [
+        "持仓分析 / 股票行业占比 / 医疗保健"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gSSBd_207",
+      "labels": [
+        "持仓分析 / 股票行业占比 / 公用事业 "
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "gSSBd_max",
+      "labels": [
+        "持仓分析 / 第一大股票行业权重 / 第一大股票行业权重"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "bBd_1and11",
+      "labels": [
+        "持仓分析 / 债券券种分布 / 国债及地方政府债"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "bBd_2",
+      "labels": [
+        "持仓分析 / 债券券种分布 / 金融债"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "bBd_3and8and10",
+      "labels": [
+        "持仓分析 / 债券券种分布 / 公司债"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "bBd_4",
+      "labels": [
+        "持仓分析 / 债券券种分布 / 可转债"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "bBd_6",
+      "labels": [
+        "持仓分析 / 债券券种分布 / ABS"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "bBd_12",
+      "labels": [
+        "持仓分析 / 债券券种分布 / 同业存单"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "iHCRankPer",
+      "labels": [
+        "费用 / 综合费率 / 排名"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "ihc",
+      "labels": [
+        "费用 / 综合费率 / 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "managementFee",
+      "labels": [
+        "费用 / 显性费率 / 管理费"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "custodianRatio",
+      "labels": [
+        "费用 / 显性费率 / 托管费"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "distibutionFee",
+      "labels": [
+        "费用 / 显性费率 / 销售服务费"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "tTCRankPer",
+      "labels": [
+        "费用 / 隐性费率 / 交易成本 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "ttc",
+      "labels": [
+        "费用 / 隐性费率 / 交易成本 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "oOCRankPer",
+      "labels": [
+        "费用 / 隐性费率 / 其它运营成本 - 排名"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "ooc",
+      "labels": [
+        "费用 / 隐性费率 / 其它运营成本 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "tERRankPer",
+      "labels": [
+        "费用 / 年报运营费率 / 排名"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "ter",
+      "labels": [
+        "费用 / 年报运营费率 / 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "%",
+      "examples": null
+    },
+    {
+      "field": "companyName",
+      "labels": [
+        "基金公司 / 公司名称 / 公司名称"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "broadCategorySizeAllExMmRank",
+      "labels": [
+        "基金公司 / 管理规模 / 非货币规模 - 绝对排名"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "broadCategorySizeAllExMm",
+      "labels": [
+        "基金公司 / 管理规模 / 非货币规模 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "亿元",
+      "examples": null
+    },
+    {
+      "field": "broadCategorySizeEquityRank",
+      "labels": [
+        "基金公司 / 管理规模 / 权益 - 绝对排名"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "broadCategorySizeEquity",
+      "labels": [
+        "基金公司 / 管理规模 / 权益 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "亿元",
+      "examples": null
+    },
+    {
+      "field": "broadCategorySizeFixIncomeRank",
+      "labels": [
+        "基金公司 / 管理规模 / 固收 - 绝对排名"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "broadCategorySizeFixIncome",
+      "labels": [
+        "基金公司 / 管理规模 / 固收 - 原始值"
+      ],
+      "valueType": "range-string",
+      "unit": "亿元",
+      "examples": null
+    },
+    {
+      "field": "managerCareerTime",
+      "labels": [
+        "基金公司 / 平均投管经验 / 平均投管经验"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "managerStayTime",
+      "labels": [
+        "基金公司 / 平均任职时间 / 平均任职时间"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "retention1Y",
+      "labels": [
+        "基金公司 / 留职率 / 近一年"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "retention3Y",
+      "labels": [
+        "基金公司 / 留职率 / 近三年"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "retention5Y",
+      "labels": [
+        "基金公司 / 留职率 / 近五年"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "successRatio3Y",
+      "labels": [
+        "基金公司 / 成功率 / 近三年"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "successRatio5Y",
+      "labels": [
+        "基金公司 / 成功率 / 近五年"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "successRatio10Y",
+      "labels": [
+        "基金公司 / 成功率 / 近十年"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "ttcRankPerByFund",
+      "labels": [
+        "基金公司 / 综合费率排名 / 综合费率排名"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "hiddenCostRankPerByFund",
+      "labels": [
+        "基金公司 / 隐性费率排名 / 隐性费率排名"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "careerYear",
+      "labels": [
+        "基金经理 / 投资年限 / 投资年限"
+      ],
+      "valueType": "range-string",
+      "unit": null,
+      "examples": null
+    },
+    {
+      "field": "aum",
+      "labels": [
+        "基金经理 / 管理规模 / 管理规模"
+      ],
+      "valueType": "range-string",
+      "unit": "亿元",
+      "examples": null
+    },
+    {
+      "field": "tagging",
+      "labels": [
+        "基金经理 / 标签 / 标签"
+      ],
+      "valueType": "string-array",
+      "unit": null,
+      "examples": [
+        {
+          "label": "自购超百万份",
+          "value": "自购超百万份"
+        },
+        {
+          "label": "FOF持有",
+          "value": "FOF持有"
+        },
+        {
+          "label": "晨星奖",
+          "value": "晨星奖"
+        },
+        {
+          "label": "晨星奖提名",
+          "value": "晨星奖提名"
+        }
+      ]
+    },
+    {
+      "field": "fundName",
+      "labels": [
+        "关键字 / 关键字 / 关键字"
+      ],
+      "valueType": "string",
+      "unit": null,
+      "examples": null
+    }
+  ],
+  "summary": {
+    "groupCount": 7,
+    "controlCount": 54,
+    "requestFieldCount": 216
+  },
+  "bundle": "screener-Cv2JJHYg.js"
+}

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+coverage/
+.env
+.pi
+docs/*
+!docs/screener-fields.json

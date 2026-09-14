@@ -1,0 +1,43 @@
+{
+  "name": "morningstar-cn-mcp",
+  "version": "0.2.0",
+  "description": "Read-only Streamable HTTP MCP server for Morningstar China fund data",
+  "type": "module",
+  "bin": {
+    "morningstar-cn-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "docs/screener-fields.json",
+    "README.md",
+    "README.zh-CN.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "zod": "4.6.1"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.6",
+    "@types/node": "24.10.13",
+    "tsx": "4.23.13",
+    "typescript": "7.0.2",
+    "vitest": "4.0.18"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

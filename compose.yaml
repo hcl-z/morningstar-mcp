@@ -1,0 +1,11 @@
+services:
+  morningstar-cn-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      MCP_HOST: 0.0.0.0
+      MCP_PORT: "3845"
+    ports:
+      - "127.0.0.1:${MCP_PORT:-3845}:3845"
+    restart: unless-stopped

@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "morningstar-cn": {
+      "url": "http://127.0.0.1:3845/mcp",
+      "headers": {
+        "X-Morningstar-Token": "${MORNINGSTAR_TOKEN}"
+      },
+      "lifecycle": "lazy-keep-alive",
+      "requestTimeoutMs": 30000,
+      "directTools": true,
+      "includeTools": [
+        "search_funds",
+        "search_managers",
+        "list_screener_fields",
+        "screen_funds",
+        "rank_funds_day_end",
+        "get_fund_overview",
+        "get_fund_performance",
+        "get_fund_growth",
+        "get_fund_portfolio",
+        "get_fund_fees",
+        "get_fund_managers",
+        "get_fund_holders",
+        "get_fund_strategy",
+        "list_fund_documents",
+        "get_market_insights"
+      ]
+    }
+  }
+}
