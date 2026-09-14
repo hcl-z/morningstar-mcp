@@ -50,15 +50,17 @@ MCP_HOST=127.0.0.1 MCP_PORT=4000 npm start
 
 ## Authentication
 
-Every MCP HTTP request must include the caller's Morningstar JWT:
+The `X-Morningstar-Token` header is optional for connection setup, `tools/list`, and tools backed by Morningstar endpoints that currently allow anonymous access:
 
 ```http
 X-Morningstar-Token: <morningstar-jwt>
 ```
 
-The server maps this value to the custom `token` header expected by Morningstar. It creates a separate stateless MCP server and Morningstar client for each HTTP request, so concurrent callers do not share tokens.
+`screen_funds` and `rank_funds_day_end` require the header. The other 13 tools can be discovered and called without it while their upstream Morningstar endpoints remain public. If Morningstar later protects one of those endpoints, the tool will return the upstream authentication error.
 
-The server does not acquire, refresh, persist, or log tokens. It does not read browser cookies or other server-side credential sources. Missing or expired tokens receive HTTP 401 responses.
+When supplied, the server maps the value to Morningstar's custom `token` header. It creates a separate stateless MCP server and Morningstar client for each HTTP request, so concurrent callers do not share tokens.
+
+The server does not acquire, refresh, persist, or log tokens. An expired supplied token receives HTTP 401. A protected tool called without a token returns an MCP `AUTH_REQUIRED` tool error.
 
 ## MCP client configuration
 
@@ -77,7 +79,7 @@ Start the HTTP server, then add the following Streamable HTTP server configurati
 }
 ```
 
-Set `MORNINGSTAR_TOKEN` in the environment that launches the MCP client. The client resolves the variable and sends its value as an HTTP request header; the MCP server process does not receive it as an environment variable.
+The `headers` block is optional if you only need tool discovery or anonymous tools. Set `MORNINGSTAR_TOKEN` in the MCP client's environment when using the two protected screening tools. The client resolves the variable and sends its value as an HTTP request header; the MCP server process does not receive it as an environment variable.
 
 Do not place a real token directly in a committed configuration file. The client must support Streamable HTTP, custom request headers configured through `headers`, and environment-variable interpolation; if its configuration format differs, use the equivalent endpoint and header settings.
 
@@ -88,8 +90,8 @@ Do not place a real token directly in a committed configuration file. The client
 | `search_funds` | Search mainland China funds by name or code | `query`, `limit` |
 | `search_managers` | Search fund managers by name | `query`, `limit` |
 | `list_screener_fields` | Find valid screener fields, types, units, and enum values | `query` |
-| `screen_funds` | Screen funds with allowlisted Morningstar fields | `filters`, `pageSize`, `sortBy`, `orderBy` |
-| `rank_funds_day_end` | Rank a bounded candidate set with latest day-end returns and category ranks | `category`, `periods`, `candidateLimit`, `limit` |
+| `screen_funds` | Screen funds with allowlisted Morningstar fields; **token required** | `filters`, `pageSize`, `sortBy`, `orderBy` |
+| `rank_funds_day_end` | Rank a bounded candidate set with latest day-end returns and category ranks; **token required** | `category`, `periods`, `candidateLimit`, `limit` |
 | `get_fund_overview` | Read NAV, category, rating, size, manager, risk level, and subscription status | `code` |
 | `get_fund_performance` | Read day-end/month-end returns, ratings, risk, and investor returns | `code`, `sections` |
 | `get_fund_growth` | Read a downsampled fund/category/benchmark growth series | `code`, dates, `maxPoints` |

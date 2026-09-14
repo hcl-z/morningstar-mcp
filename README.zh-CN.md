@@ -50,15 +50,17 @@ MCP_HOST=127.0.0.1 MCP_PORT=4000 npm start
 
 ## 鉴权
 
-每个MCP HTTP请求都必须携带调用者的晨星JWT：
+连接MCP、调用 `tools/list` 以及使用晨星目前允许匿名访问的工具时，可以不传 `X-Morningstar-Token`：
 
 ```http
 X-Morningstar-Token: <morningstar-jwt>
 ```
 
-服务将其映射为晨星上游要求的自定义 `token` Header。每个HTTP请求都会创建独立的无状态MCP服务器和晨星客户端，因此并发调用者不会共享Token。
+`screen_funds` 和 `rank_funds_day_end` 必须传Header。其余13个工具目前可以匿名发现和调用。如果晨星以后收紧其中某个上游接口，该工具会返回晨星的鉴权错误。
 
-服务不负责获取、续期、保存或记录Token，也不会读取浏览器Cookie或其他服务端凭证来源。缺少Token或Token过期时，服务返回HTTP 401。
+收到Token后，服务将其映射为晨星上游要求的自定义 `token` Header。每个HTTP请求都会创建独立的无状态MCP服务器和晨星客户端，因此并发调用者不会共享Token。
+
+服务不负责获取、续期、保存或记录Token。已传入但过期的Token会收到HTTP 401；未传Token却调用受保护工具时，会收到MCP `AUTH_REQUIRED` 工具错误。
 
 ## MCP客户端配置
 
@@ -77,7 +79,7 @@ X-Morningstar-Token: <morningstar-jwt>
 }
 ```
 
-请在启动MCP客户端的环境中设置 `MORNINGSTAR_TOKEN`。客户端解析变量后通过HTTP Header发送Token，MCP服务进程不会把它作为环境变量接收。
+只需要查看工具或使用匿名工具时，可以省略 `headers` 配置。需要调用两个受保护的筛选工具时，请在启动MCP客户端的环境中设置 `MORNINGSTAR_TOKEN`。客户端解析变量后通过HTTP Header发送Token，MCP服务进程不会把它作为环境变量接收。
 
 不要把真实Token直接写进提交到版本库的配置文件。客户端需要支持Streamable HTTP、通过 `headers` 配置自定义请求Header，以及环境变量插值；如客户端的配置格式不同，请使用等效的端点和Header设置。
 
@@ -88,8 +90,8 @@ X-Morningstar-Token: <morningstar-jwt>
 | `search_funds` | 按名称或代码搜索中国内地基金 | `query`, `limit` |
 | `search_managers` | 按姓名搜索基金经理 | `query`, `limit` |
 | `list_screener_fields` | 查询筛选字段、类型、单位和枚举值 | `query` |
-| `screen_funds` | 使用晨星白名单字段筛选基金 | `filters`, `pageSize`, `sortBy`, `orderBy` |
-| `rank_funds_day_end` | 用最新日末收益和同类排名对有限候选池排序 | `category`, `periods`, `candidateLimit`, `limit` |
+| `screen_funds` | 使用晨星白名单字段筛选基金，**需要Token** | `filters`, `pageSize`, `sortBy`, `orderBy` |
+| `rank_funds_day_end` | 用最新日末收益和同类排名对有限候选池排序，**需要Token** | `category`, `periods`, `candidateLimit`, `limit` |
 | `get_fund_overview` | 查询净值、分类、评级、规模、经理、风险等级和申购状态 | `code` |
 | `get_fund_performance` | 查询日末/月末收益、评级、风险和投资者回报 | `code`, `sections` |
 | `get_fund_growth` | 查询降采样后的基金、同类和基准收益曲线 | `code`, 日期, `maxPoints` |

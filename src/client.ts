@@ -41,7 +41,7 @@ export class MorningstarClient {
   private readonly maxResponseBytes: number;
   private readonly fetchImpl: typeof globalThis.fetch;
   private readonly semaphore: Semaphore;
-  private readonly token: string;
+  private readonly token: string | undefined;
 
   constructor(options: ClientOptions) {
     this.baseUrl = (options.baseUrl ?? DEFAULT_BASE_URL).replace(/\/$/, "");
@@ -58,6 +58,12 @@ export class MorningstarClient {
     }
 
     const token = this.token;
+    if (options.requireAuth && !token) {
+      throw new MorningstarError(
+        "This tool requires an X-Morningstar-Token request header",
+        "AUTH_REQUIRED",
+      );
+    }
 
     return this.semaphore.run(async () => {
       const timeoutController = new AbortController();
@@ -70,7 +76,7 @@ export class MorningstarClient {
         "user-agent": "morningstar-cn-mcp/0.1.0",
         "x-api-requestid": crypto.randomUUID().toUpperCase(),
       });
-      headers.set("token", token);
+      if (token) headers.set("token", token);
       if (options.body !== undefined) headers.set("content-type", "application/json");
 
       try {
@@ -140,7 +146,7 @@ export class MorningstarClient {
           "user-agent": "morningstar-cn-mcp/0.1.0",
           "x-api-requestid": crypto.randomUUID().toUpperCase(),
         });
-        headers.set("token", token);
+        if (token) headers.set("token", token);
         const response = await this.fetchImpl(`${this.baseUrl}${path}`, {
           headers,
           signal: controller.signal,

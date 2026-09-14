@@ -47,6 +47,27 @@ describe("MorningstarClient", () => {
     expect(new Headers(init.headers).get("token")).toBe("user-token");
   });
 
+  it("rejects protected requests without a token", async () => {
+    const fetchMock = vi.fn<typeof fetch>();
+    const client = new MorningstarClient({ fetch: fetchMock });
+
+    await expect(client.request("/cn-api/v2/search/es", { requireAuth: true })).rejects.toMatchObject({
+      code: "AUTH_REQUIRED",
+    });
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("omits the token header for anonymous requests", async () => {
+    const fetchMock = vi.fn<typeof fetch>().mockResolvedValue(
+      response({ _meta: { response_status: "200011" }, data: [] }),
+    );
+    const client = new MorningstarClient({ fetch: fetchMock });
+
+    await client.request("/cn-api/public/v1/fund-cache?match=test");
+    const [, init] = fetchMock.mock.calls[0] as [RequestInfo | URL, RequestInit];
+    expect(new Headers(init.headers).has("token")).toBe(false);
+  });
+
   it("rejects oversized responses before parsing", async () => {
     const body = JSON.stringify({ _meta: { response_status: "200011" }, data: { value: "large" } });
     const fetchMock = vi.fn<typeof fetch>().mockResolvedValue(

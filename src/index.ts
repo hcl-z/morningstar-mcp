@@ -19,7 +19,7 @@ export interface ServerOptions {
 }
 
 export interface HttpAppOptions {
-  createClient?: (token: string) => MorningstarClient;
+  createClient?: (token: string | undefined) => MorningstarClient;
   host?: string;
 }
 
@@ -35,11 +35,12 @@ export function createServer(options: ServerOptions): McpServer {
 
 export function createHttpApp(options: HttpAppOptions = {}): Express {
   const host = options.host ?? DEFAULT_HOST;
-  const createClient = options.createClient ?? ((token: string) => new MorningstarClient({ token }));
+  const createClient = options.createClient ?? ((token: string | undefined) =>
+    new MorningstarClient(token === undefined ? {} : { token }));
   const app = createMcpExpressApp({ host });
 
   app.post(MCP_PATH, async (req: Request, res: Response) => {
-    let token: string;
+    let token: string | undefined;
     try {
       token = normalizeIncomingToken(req.headers[TOKEN_HEADER]);
     } catch (error) {

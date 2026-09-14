@@ -17,7 +17,7 @@ export interface RequestOptions {
 }
 
 export interface ClientOptions {
-  token: string;
+  token?: string;
   baseUrl?: string;
   timeoutMs?: number;
   maxResponseBytes?: number;

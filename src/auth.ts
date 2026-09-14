@@ -16,11 +16,9 @@ export function assertTokenUsable(token: string): void {
   }
 }
 
-export function normalizeIncomingToken(value: string | string[] | undefined): string {
+export function normalizeIncomingToken(value: string | string[] | undefined): string | undefined {
   const token = (Array.isArray(value) ? value[0] : value)?.trim();
-  if (!token) {
-    throw new Error("AUTH_REQUIRED: X-Morningstar-Token header is required");
-  }
+  if (!token) return undefined;
   assertTokenUsable(token);
   return token;
 }

@@ -19,7 +19,7 @@ ENV NODE_ENV=production \
     MCP_PORT=3845
 
 COPY --from=build /app/dist ./dist
-  COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/node_modules ./node_modules
 COPY docs/screener-fields.json ./docs/screener-fields.json
 
 USER node

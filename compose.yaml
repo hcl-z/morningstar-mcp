@@ -1,8 +1,7 @@
 services:
   morningstar-cn-mcp:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/hcl-z/morningstar-mcp:latest
+    pull_policy: always
     environment:
       MCP_HOST: 0.0.0.0
       MCP_PORT: "3845"

@@ -29,7 +29,7 @@ async function connect(request: MorningstarClient["request"]) {
 }
 
 describe("Streamable HTTP MCP", () => {
-  async function listen(createClient: (token: string) => MorningstarClient): Promise<URL> {
+  async function listen(createClient: (token: string | undefined) => MorningstarClient): Promise<URL> {
     const app = createHttpApp({ createClient });
     const server = await new Promise<Server>((resolve) => {
       const started = app.listen(0, "127.0.0.1", () => resolve(started));
@@ -40,25 +40,27 @@ describe("Streamable HTTP MCP", () => {
     return new URL(`http://127.0.0.1:${address.port}/mcp`);
   }
 
-  it("rejects requests without X-Morningstar-Token", async () => {
-    const url = await listen((token) => new MorningstarClient({ token }));
-    const response = await fetch(url, {
-      method: "POST",
-      headers: { "content-type": "application/json", accept: "application/json, text/event-stream" },
-      body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "initialize", params: {
-        protocolVersion: "2025-06-18",
-        capabilities: {},
-        clientInfo: { name: "test", version: "1" },
-      } }),
+  it("allows headerless initialization and tool discovery", async () => {
+    const seenTokens: Array<string | undefined> = [];
+    const url = await listen((token) => {
+      seenTokens.push(token);
+      return { request: vi.fn() } as unknown as MorningstarClient;
     });
+    const client = new Client({ name: "anonymous-client", version: "1" });
+    const transport = new StreamableHTTPClientTransport(url);
 
-    expect(response.status).toBe(401);
-    expect(await response.text()).not.toContain("token");
+    await client.connect(transport as unknown as Parameters<Client["connect"]>[0]);
+    const tools = await client.listTools();
+
+    expect(tools.tools).toHaveLength(15);
+    expect(seenTokens.every((token) => token === undefined)).toBe(true);
+    await client.close();
   });
 
   it("isolates each request header token", async () => {
     const seenTokens: string[] = [];
     const url = await listen((token) => {
+      if (token === undefined) throw new Error("Expected test token");
       seenTokens.push(token);
       return {
         request: vi.fn().mockResolvedValue([]),
