@@ -1,0 +1,47 @@
+src/index.ts
+  s_96d2b6372b8db9::t_e6539060c3d731 22,43
+  s_96d2b6372b8db9::t_cbc56c3021b02e 38-39
+src/client.ts
+  s_96d2b6372b8db9::t_630703062b8a87 44,61-66,79,149
+Dockerfile
+  s_dcdd940a0dc1f2::t_c5f9f938d79259 22
+README.zh-CN.md
+  s_96d2b6372b8db9::t_3d6c772a24da88 53,59,61-63,82,93-94
+tests/client.test.ts
+  s_96d2b6372b8db9::t_123857fe61a16d 50-70
+tests/server.test.ts
+  s_96d2b6372b8db9::t_3e8e3b6acd22a7 63
+  s_96d2b6372b8db9::t_575fc58907b889 32,43-47,49-53,55-57
+compose.yaml
+  s_dcdd940a0dc1f2::t_c5f9f938d79259 3-4
+src/types.ts
+  s_96d2b6372b8db9::t_260fe7c45d9722 20
+src/auth.ts
+  s_96d2b6372b8db9::t_d7145dfed10408 19,21
+README.md
+  s_96d2b6372b8db9::t_f3c96242c77796 53,59,61-63,82,93-94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.44-trip",
+  "base_commit_sha": "e212434cee824f0e5437d90a75cc10a18da393ed",
+  "prompts": {},
+  "sessions": {
+    "s_96d2b6372b8db9": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a08b44-e4da-7461-b3b2-591d48ea37f2",
+        "model": "gpt-5-6-sol"
+      },
+      "human_author": "hcl-z <1401859664@qq.com>"
+    },
+    "s_dcdd940a0dc1f2": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "e8561d67-c3e7-4efb-9575-2b0a8a7d808b",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "hcl-z <1401859664@qq.com>"
+    }
+  }
+}
