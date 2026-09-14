@@ -1,0 +1,32 @@
+compose.yaml
+  s_dcdd940a0dc1f2::t_55c4be2433b2ce 1-11
+.dockerignore
+  s_dcdd940a0dc1f2::t_55c4be2433b2ce 1-20
+.github/workflows/publish-image.yml
+  s_dcdd940a0dc1f2::t_a361973c81a65d 1-59
+.gitignore
+  s_dcdd940a0dc1f2::t_840c64e69bb96e 6-7
+Dockerfile
+  s_dcdd940a0dc1f2::t_55c4be2433b2ce 1-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.44-trip",
+  "base_commit_sha": "a3119b243a9facae9d206a5cfcc3d288949c219c",
+  "prompts": {},
+  "humans": {
+    "h_57e80a12fc07c7": {
+      "author": "hcl-z <1401859664@qq.com>"
+    }
+  },
+  "sessions": {
+    "s_dcdd940a0dc1f2": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "e8561d67-c3e7-4efb-9575-2b0a8a7d808b",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "hcl-z <1401859664@qq.com>"
+    }
+  }
+}
